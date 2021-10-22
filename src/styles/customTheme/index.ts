@@ -13,7 +13,8 @@ const customTheme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "gray.900",
+        bg: "black",
+        // bg: "yellow.800",
         color: "gray.50",
       },
     },

@@ -34,7 +34,7 @@ function FeaturesSection() {
     },
     {
       name: "Vibe",
-      slug: "Open Vibe",
+      slug: "Open vibe",
       image:
         "https://images.squarespace-cdn.com/content/v1/5702d87ba3360c0321df9b42/1563234193886-2WSWPFEM5QLC6650X3GK/ideas-for-surprise-birthday-party-for-best-friend.jpg?format=2500w",
       description:
@@ -43,15 +43,18 @@ function FeaturesSection() {
   ];
 
   return (
-    <Box>
-      <Box align="center" mt="8">
+    <Box bgColor="yellow.800" py={[8, 14]} mt="8">
+      <Box align="center">
         <Text
           as="h2"
           fontWeight="bold"
-          fontSize="4xl"
+          fontSize={["3xl", "4xl"]}
           maxWidth={{ base: "100vh", md: "130vh", lg: "130vh", xl: "130vh" }}
         >
-          TEREMOS
+          EXPERIÊNCIAS
+          <Text as="p" fontSize={["xl", "2xl"]} fontWeight="300">
+            Para deixar o ano novo ainda mais incrível.
+          </Text>
         </Text>
       </Box>
       <Flex
