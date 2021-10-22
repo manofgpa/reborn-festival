@@ -10,6 +10,14 @@ const customTheme = extendTheme({
   components: {
     Button,
   },
+  styles: {
+    global: {
+      body: {
+        bg: "gray.900",
+        // color: "gray.900",
+      },
+    },
+  },
 });
 
 export default customTheme;

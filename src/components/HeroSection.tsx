@@ -22,7 +22,7 @@ export const HeroSection = () => {
         px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
       >
-        <Stack maxW={"2xl"} align={"flex-start"} spacing={6}>
+        <Stack maxW={"2xl"} align={"center"} spacing={6}>
           <Text
             color={"white"}
             fontWeight={700}
@@ -31,24 +31,14 @@ export const HeroSection = () => {
           >
             REBORN FESTIVAL
           </Text>
-          <Stack direction={"row"}>
-            <Button
-              bg={"blue.400"}
-              rounded={"full"}
-              color={"white"}
-              _hover={{ bg: "blue.500" }}
-            >
-              Show me more
-            </Button>
-            <Button
-              bg={"whiteAlpha.300"}
-              rounded={"full"}
-              color={"white"}
-              _hover={{ bg: "whiteAlpha.500" }}
-            >
-              Show me more
-            </Button>
-          </Stack>
+          <Button
+            bg={"gray.900"}
+            rounded={"full"}
+            color={"white"}
+            _hover={{ bg: "gray.700" }}
+          >
+            Show me more
+          </Button>
         </Stack>
       </VStack>
     </Flex>
