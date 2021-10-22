@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Card from "../components/Card";
 
-function PartySection() {
+function FeaturesSection() {
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
@@ -67,4 +67,4 @@ function PartySection() {
   );
 }
 
-export default PartySection;
+export default FeaturesSection;

@@ -26,6 +26,8 @@ export default function Card({ data }: CardProps) {
         <Box
           role={"group"}
           p={6}
+          mt={16}
+          mx={8}
           maxW={"330px"}
           w={"full"}
           bg={useColorModeValue("white", "gray.800")}
