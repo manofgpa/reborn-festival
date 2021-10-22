@@ -1,5 +1,10 @@
 import React from "react";
-import { Box, IconButton, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Box,
+  IconButton,
+  useBreakpointValue,
+  useColorModeValue,
+} from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib

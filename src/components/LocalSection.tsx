@@ -39,17 +39,14 @@ export const LocalSection = () => {
         mt={14}
         justify="space-evenly"
       >
-        <Flex
-          direction="column"
-          align="center"
-          justify="center"
-          // justify="space-between"
-          maxWidth={600}
-        >
+        <Box justify="center" maxWidth={600}>
+          {/* <Flex direction="column" align="center" justify="center" maxWidth={600}> */}
           <Box>
-            <Text fontSize={["2xl", "4xl"]}>Casa Abreu</Text>
+            <Text as="h3" fontSize={["2xl", "4xl"]} fontWeight="bold">
+              Casa Abreu
+            </Text>
           </Box>
-          <Box align="left" fontSize={["md", "xl"]}>
+          <Box align="left" fontSize={["md", "xl"]} mt="4">
             <Text lineHeight={6}>
               Sitio de eventos localizada na Freguesia, com 13 mil m2, campo de
               futebol, quadra de volei, salão de festas, piscina e salão de
@@ -64,7 +61,7 @@ export const LocalSection = () => {
               Teremos estacionamento gratuito no local!
             </Text>
           </Box>
-        </Flex>
+        </Box>
         <Flex mt={8} w={["100%", "50%"]}>
           <Carousel />
         </Flex>
