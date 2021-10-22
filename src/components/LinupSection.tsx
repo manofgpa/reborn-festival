@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
-import Card from "../components/Card";
+import Card from "./Card";
 import { VerticalTimeline } from "./VerticalTimeline";
 
 export const LineupSection = () => {
@@ -102,21 +102,42 @@ export const LineupSection = () => {
           O LINEUP
         </Text>
       </Box>
-      <Flex
-        direction={isWideVersion ? "row" : "column"}
-        w="100%"
-        align="center"
-        justify="center"
-        mb={12}
-        px={2}
-      >
-        <Text>
-          Teremos 2 palcos, 15 DJs, musica de todos os gostos. Horário das 17h
-          as 11h.
-        </Text>
-      </Flex>
-      <Box mt="4">
-        <VerticalTimeline djs={djs} />
+      <Box>
+        <Flex
+          direction={isWideVersion ? "row" : "column"}
+          w="100%"
+          align="center"
+          justify="center"
+          mb={12}
+          px={2}
+        >
+          <Text
+            as="h2"
+            fontWeight="bold"
+            fontSize={["3xl", "4xl"]}
+            maxWidth={{ base: "100vh", md: "130vh", lg: "130vh", xl: "130vh" }}
+            my={16}
+          >
+            REBORN STAGE
+          </Text>
+        </Flex>
+        <Box mt="4">
+          <VerticalTimeline djs={djs} />
+        </Box>
+        <Box align="center">
+          <Text
+            as="h2"
+            fontWeight="bold"
+            fontSize={["3xl", "4xl"]}
+            maxWidth={{ base: "100vh", md: "130vh", lg: "130vh", xl: "130vh" }}
+            my={16}
+          >
+            SUNLIGHT STAGE
+          </Text>
+        </Box>
+        <Box mt="4">
+          <VerticalTimeline djs={djs} />
+        </Box>
       </Box>
     </Box>
   );
