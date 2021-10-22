@@ -3,7 +3,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-import { HiOutlineMusicNote } from "react-icons/hi";
+import { HiOutlineMusicNote, HiCheck } from "react-icons/hi";
 
 import "react-vertical-timeline-component/style.min.css";
 import { Avatar, Box } from "@chakra-ui/react";
@@ -40,6 +40,21 @@ export const VerticalTimeline = ({ djs }: VerticalTimelineProps) => {
           </Box>
         </VerticalTimelineElement>
       ))}
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: "#8a561b", color: "#fff" }}
+        contentArrowStyle={{ borderRight: "7px solid  #8a561b" }}
+        date="11:00"
+        iconStyle={{ background: "green", color: "#fff" }}
+        icon={<HiCheck />}
+      >
+        <Box align="center">
+          <h3 style={{ fontSize: "20px", fontWeight: "bold" }}>ENCERRAMENTO</h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            2022 começou da melhor forma!
+          </h4>
+        </Box>
+      </VerticalTimelineElement>
     </VerticalTime>
   );
 };
