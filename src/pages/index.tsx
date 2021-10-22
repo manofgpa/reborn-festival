@@ -16,7 +16,6 @@ const Home = () => {
       <LocalSection />
       <LineupSection />
       <TicketsSection />
-      <CountdownSection />
     </Box>
   );
 };
