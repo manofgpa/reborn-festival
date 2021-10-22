@@ -64,7 +64,6 @@ class MyDocument extends Document {
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#FFFFFF" />
 
-          {/* add your own app-icon */}
           {/* <link
             rel="apple-touch-icon"
             sizes="180x180"

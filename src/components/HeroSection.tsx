@@ -5,7 +5,6 @@ import {
   Text,
   VStack,
   useBreakpointValue,
-  Box,
 } from "@chakra-ui/react";
 
 import { ArrowDownIcon } from "@chakra-ui/icons";

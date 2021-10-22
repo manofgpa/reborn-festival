@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Stack,
-  Text,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import Card from "../components/Card";
 import { VerticalTimeline } from "./VerticalTimeline";
 

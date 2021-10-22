@@ -1,11 +1,4 @@
-import {
-  Flex,
-  Text,
-  Stack,
-  VStack,
-  useBreakpointValue,
-  Button,
-} from "@chakra-ui/react";
+import { Flex, VStack, useBreakpointValue, Button } from "@chakra-ui/react";
 import { CountdownSection } from "./CountdownSection";
 
 export const TicketsSection = () => {
@@ -17,7 +10,6 @@ export const TicketsSection = () => {
         url(/images/tomorrowland2.jpg)`}
       backgroundSize={"cover"}
       backgroundPosition={"center center"}
-      // backgroundBlendMode="multiply"
     >
       <VStack
         w={"full"}
@@ -34,7 +26,6 @@ export const TicketsSection = () => {
         >
           <CountdownSection />
           <Button
-            // bg={"#8a561b"}
             colorScheme="green"
             rounded={"full"}
             color={"white"}

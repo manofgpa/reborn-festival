@@ -6,12 +6,8 @@ import {
   Heading,
   Text,
   Stack,
-  StackDivider,
-  Icon,
-  useColorModeValue,
   Box,
 } from "@chakra-ui/react";
-import { GiLoveSong, GiFireworkRocket, GiClockwork } from "react-icons/gi";
 
 import { ReactElement } from "react";
 
@@ -75,32 +71,6 @@ export const PartySection = () => {
             você para renascer das cinzas conosco nessa linda e muito rica
             jornada. #TogetherWeReborn
           </Text>
-          {/* <Stack
-            spacing={4}
-            divider={
-              <StackDivider
-                borderColor={useColorModeValue("gray.100", "gray.700")}
-              />
-            }
-          >
-            <Feature
-              icon={
-                <Icon as={GiFireworkRocket} color={"yellow.500"} w={5} h={5} />
-              }
-              iconBg={useColorModeValue("yellow.100", "yellow.900")}
-              text={"2 palcos simultâneos"}
-            />
-            <Feature
-              icon={<Icon as={GiClockwork} color={"green.500"} w={5} h={5} />}
-              iconBg={useColorModeValue("green.100", "green.900")}
-              text={"17 horas de evento"}
-            />
-            <Feature
-              icon={<Icon as={GiLoveSong} color={"purple.500"} w={5} h={5} />}
-              iconBg={useColorModeValue("purple.100", "purple.900")}
-              text={"15 Atrações"}
-            />
-          </Stack> */}
         </Stack>
         <Flex>
           <Image

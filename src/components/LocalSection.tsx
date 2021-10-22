@@ -40,7 +40,6 @@ export const LocalSection = () => {
         justify="space-evenly"
       >
         <Box justify="center" maxWidth={600}>
-          {/* <Flex direction="column" align="center" justify="center" maxWidth={600}> */}
           <Box>
             <Text as="h3" fontSize={["2xl", "4xl"]} fontWeight="bold">
               Casa Abreu
