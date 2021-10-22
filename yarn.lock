@@ -1857,6 +1857,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-vertical-timeline-component@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/react-vertical-timeline-component/-/react-vertical-timeline-component-3.3.1.tgz#91da2a2173d1f16eadf1181bd719a0779d6ba75b"
+  integrity sha512-HCaVbzuZXqJliGPwuf0dhFnKVN7eN6xD4eTCP8hqvcwheWvRPs756G4jMfkOdmRx/9h2X0pbn11+tvE2StmxiQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^17.0.0":
   version "17.0.31"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.31.tgz#fe05ebf91ff3ae35bb6b13f6c1b461db8089dff8"

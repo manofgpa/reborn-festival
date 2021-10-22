@@ -22,7 +22,7 @@ interface CardProps {
 export default function Card({ data }: CardProps) {
   return (
     <>
-      {data.map((card) => (
+      {data?.map((card) => (
         <Box
           role={"group"}
           p={6}
