@@ -99,7 +99,7 @@ export const LineupSection = () => {
   ];
 
   return (
-    <Box>
+    <Box bgGradient="linear(to-b, #000000, #989781)">
       <Box align="center" mt="8">
         <Text
           as="h2"

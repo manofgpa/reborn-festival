@@ -15,8 +15,8 @@ const Home = () => {
       <FeaturesSection />
       <LocalSection />
       <LineupSection />
-      <CountdownSection />
       <TicketsSection />
+      <CountdownSection />
     </Box>
   );
 };
