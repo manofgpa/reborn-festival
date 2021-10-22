@@ -81,7 +81,7 @@ export const CountdownSection = () => {
             <SimpleGrid
               columns={4}
               spacingX={["10px", "20px"]}
-              spacingY={["0", "20px"]}
+              spacingY={["5px", "20px"]}
               fontSize={[18, 60]}
             >
               <Box height={["20px", "80px"]} justify={"center"}>

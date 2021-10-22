@@ -31,6 +31,8 @@ export const TicketsSection = () => {
             color={"white"}
             _hover={{ bg: "#8a561b" }}
             w={["250px", "500px"]}
+            fontSize={["14px", "20px"]}
+            fontWeight="bold"
             p={[8, 12]}
           >
             GARANTA SEU INGRESSO
