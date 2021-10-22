@@ -47,7 +47,7 @@ export const Carousel = () => {
       position={"relative"}
       height={"600px"}
       width={"full"}
-      overflow={"hidden"}
+      // overflow={"hidden"}
     >
       {/* CSS files for react-slick */}
       <link

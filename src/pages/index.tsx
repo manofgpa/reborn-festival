@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import FeaturesSection from "components/FeaturesSection";
 import { HeroSection } from "components/HeroSection";
+import { LineupSection } from "components/LinupSection";
 import { LocalSection } from "components/LocalSection";
 import { PartySection } from "components/PartySection";
 
@@ -11,6 +12,7 @@ const Home = () => {
       <PartySection />
       <FeaturesSection />
       <LocalSection />
+      <LineupSection />
     </Box>
   );
 };

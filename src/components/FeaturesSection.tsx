@@ -43,7 +43,7 @@ function FeaturesSection() {
   ];
 
   return (
-    <Box bgColor="yellow.800" py={[8, 14]} mt="8">
+    <Box bgColor="yellow.800" py={[8, 20]} mt="8" px={2}>
       <Box align="center">
         <Text
           as="h2"

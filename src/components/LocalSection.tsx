@@ -19,8 +19,8 @@ export const LocalSection = () => {
       bgImage={`linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.5)),
         url(/images/local-dark.jpg)`}
       backgroundSize={"cover"}
-      backgroundPosition={"center center"}
-      p={2}
+      backgroundPosition={["right", "center center"]}
+      px={2}
     >
       <Box align="center" mt="8">
         <Text
