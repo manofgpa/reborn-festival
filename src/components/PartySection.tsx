@@ -11,11 +11,8 @@ import {
   useColorModeValue,
   Box,
 } from "@chakra-ui/react";
-import {
-  IoAnalyticsSharp,
-  IoLogoBitcoin,
-  IoSearchSharp,
-} from "react-icons/io5";
+import { GiLoveSong, GiFireworkRocket, GiClockwork } from "react-icons/gi";
+
 import { ReactElement } from "react";
 
 interface FeatureProps {
@@ -55,16 +52,30 @@ export const PartySection = () => {
           A FESTA
         </Text>
       </Box>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mt={8}>
         <Stack spacing={4}>
-          <Heading></Heading>
-          <Text color={"gray.500"} fontSize={"lg"}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-            aliquam minima neque est quo repellat et culpa eligendi ea magni
-            recusandae, sint praesentium distinctio, itaque eius porro
-            aspernatur beatae provident!
+          <Heading>Edição baile das máscaras.</Heading>
+          <Text color={"gray.400"} fontSize={"lg"}>
+            Como uma Fênix, O Reborn Festival renasce das cinzas após longo
+            período sem bons eventos para proporcionar ao público uma
+            experiência inesquecível de entretenimento. O Objetivo do evento é
+            celebrar a (re)novação de mais um novo ciclo da nossa jornada nesse
+            mundo e, principalmente, comemorar a superação desta fase tão
+            difícil pela qual todos passamos. Somos muito mais que uma festa,
+            somos a realização de um sonho que tem como objetivo poder
+            compartilhar sentimentos, memórias, energias positivas e muuuuuita
+            música boa com todos aqueles que amamos. Conectados através dessa
+            experiência incrível, prezamos pelo amor, amizade, cumplicidade e,
+            mais uma vez, permitir que os artistas participantes nos levem pra
+            passear nas suas diferentes vibes. Nosso objetivo é juntar nossos
+            amigos e celebrar essa data tão esperada e fornecer uma estrutura
+            profissional, digna de grandes apresentações com muito, mas muito
+            som, iluminação e entretenimento, localizados bem próximos de você,
+            oferecendo uma experiência totalmente diferenciada. Contamos com
+            você para renascer das cinzas conosco nessa linda e muito rica
+            jornada. #TogetherWeReborn
           </Text>
-          <Stack
+          {/* <Stack
             spacing={4}
             divider={
               <StackDivider
@@ -74,31 +85,29 @@ export const PartySection = () => {
           >
             <Feature
               icon={
-                <Icon as={IoAnalyticsSharp} color={"yellow.500"} w={5} h={5} />
+                <Icon as={GiFireworkRocket} color={"yellow.500"} w={5} h={5} />
               }
               iconBg={useColorModeValue("yellow.100", "yellow.900")}
               text={"2 palcos simultâneos"}
             />
             <Feature
-              icon={<Icon as={IoLogoBitcoin} color={"green.500"} w={5} h={5} />}
+              icon={<Icon as={GiClockwork} color={"green.500"} w={5} h={5} />}
               iconBg={useColorModeValue("green.100", "green.900")}
               text={"17 horas de evento"}
             />
             <Feature
-              icon={
-                <Icon as={IoSearchSharp} color={"purple.500"} w={5} h={5} />
-              }
+              icon={<Icon as={GiLoveSong} color={"purple.500"} w={5} h={5} />}
               iconBg={useColorModeValue("purple.100", "purple.900")}
-              text={"Market Analysis"}
+              text={"15 Atrações"}
             />
-          </Stack>
+          </Stack> */}
         </Stack>
         <Flex>
           <Image
             rounded={"md"}
             alt={"feature image"}
             src={
-              "https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              "https://media.resources.festicket.com/www/magazine/BestEuro_L.jpg"
             }
             objectFit={"cover"}
           />

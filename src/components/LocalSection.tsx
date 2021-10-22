@@ -15,14 +15,14 @@ export const LocalSection = () => {
   return (
     <Box
       w={"full"}
-      h={"80vh"}
+      py={12}
       bgImage={`linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.5)),
         url(/images/local-dark.jpg)`}
       backgroundSize={"cover"}
       backgroundPosition={["right", "center center"]}
       px={2}
     >
-      <Box align="center" mt="8">
+      <Box align="center">
         <Text
           as="h2"
           fontWeight="bold"
@@ -36,7 +36,7 @@ export const LocalSection = () => {
         direction={isWideVersion ? "row" : "column"}
         w="100%"
         align="center"
-        mt={14}
+        mt={4}
         justify="space-evenly"
       >
         <Box justify="center" maxWidth={600}>
@@ -49,7 +49,7 @@ export const LocalSection = () => {
           <Box align="left" fontSize={["md", "xl"]} mt="4">
             <Text lineHeight={6}>
               Sitio de eventos localizada na Freguesia, com 13 mil m2, campo de
-              futebol, quadra de volei, salão de festas, piscina e salão de
+              futebol, quadra de vôlei, salão de festas, piscina e salão de
               jogos.
             </Text>
             <Text mt={4}>

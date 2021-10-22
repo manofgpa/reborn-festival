@@ -47,7 +47,7 @@ export const LineupSection = () => {
   ];
 
   return (
-    <Box mt={isWideVersion ? "" : "60"}>
+    <Box>
       <Box align="center" mt="8">
         <Text
           as="h2"
@@ -64,6 +64,7 @@ export const LineupSection = () => {
         align="center"
         justify="center"
         mb={12}
+        px={2}
       >
         <Text>
           Teremos 2 palcos, 15 DJs, musica de todos os gostos. Horário das 17h
