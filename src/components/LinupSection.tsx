@@ -8,28 +8,27 @@ export const LineupSection = () => {
     lg: true,
   });
 
-  const djs = [
+  const rebornStage = [
     {
       name: "Mano",
       genres: "Tech house / Techno",
-      setTime: "16:00 - 17:30",
+      setTime: "?? : ?? - ?? : ??",
       description:
         "Sua personalidade musical possui influências de house e tech house,  permeando vertentes do techno de forma sutil e envolvente.",
-      image:
-        "https://scontent.fuba2-1.fna.fbcdn.net/v/t1.6435-9/117276143_3129931930375593_8094487904896293071_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeGdV4sJ7vj8A4aETurB2jP6TlRd2F-F6Y5OVF3YX4XpjmayL2Gf4z6Ntvm96czP2_HtcI40e0244Dnljhmj_rLt&_nc_ohc=tv4fyTfJfKoAX8gxEPj&tn=OeDYb1pbYGmFyee-&_nc_ht=scontent.fuba2-1.fna&oh=0b2444298c3902279402c6410ac8ebdb&oe=61995D05",
+      image: "/images/djs/mano.png",
     },
     {
       name: "Djenko",
       genres: "Bass Music / Desande",
-      setTime: "17:30 - 19:00",
+      setTime: "?? : ?? - ?? : ??",
       description:
         "Edison Borges, nome original do artista, é dono de uma sonoridade peculiar; uma mistura bem sucedida entre techno, EDM e deep brasileiro, que tem o grave como forte característica. Ao utilizar elementos de diferentes estilos, sua música representa toda a miscigenação do país, traduzindo-se num som tipicamente brasileiro.",
       image: "/images/djs/edman-superman.jpg",
     },
     {
       name: "Jama",
-      genres: "EDM",
-      setTime: "19:00 - 21:30",
+      genres: "Mexican Lifestyle",
+      setTime: "?? : ?? - ?? : ??",
       description:
         "Com vibe dançante, Jama carrega originalidade: o mix perfeito entre as nuances do grave potente, característica marcante do artista, com experimentações inovadoras através dos vocais debochados do funk carioca e o salseiro mexicano que une tudo como uma deliciosa guacamole.",
       image:
@@ -38,34 +37,107 @@ export const LineupSection = () => {
     {
       name: "TBA",
       genres: "",
-      setTime: "21:30 - 23:00",
-      description: "Quem será?",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxOZpooA0_k640_FB3z8rZG9QUkG1XsYJ-T1com8ChptJdx5UwL6-OqjzGvhtqO9i7QU&usqp=CAU",
     },
     {
       name: "TBA",
       genres: "",
-      setTime: "21:30 - 23:00",
-      description: "Quem será?",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
       image:
         "https://www.seekpng.com/png/small/49-497487_unknown-clipart-man-silhouette-female-silhouette-question-mark.png",
     },
     {
       name: "TBA",
       genres: "",
-      setTime: "21:30 - 23:00",
-      description: "Quem será?",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
       image:
         "https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg",
     },
     {
       name: "TBA",
       genres: "",
-      setTime: "21:30 - 23:00",
-      description: "Quem será?",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image: "/images/anom/anom1.jpg",
+    },
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5oZn_ujpLbqEt8CVFMIcAA1rUzD4Al3NI8ZhnNqGxMWfT3kqPcugUSSDFeynM1pni5sw&usqp=CAU",
+    },
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
       image:
         "https://www.seekpng.com/png/small/49-497487_unknown-clipart-man-silhouette-female-silhouette-question-mark.png",
+    },
+  ];
+
+  const sunLightStage = [
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxOZpooA0_k640_FB3z8rZG9QUkG1XsYJ-T1com8ChptJdx5UwL6-OqjzGvhtqO9i7QU&usqp=CAU",
+    },
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image:
+        "https://www.seekpng.com/png/small/49-497487_unknown-clipart-man-silhouette-female-silhouette-question-mark.png",
+    },
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image:
+        "https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg",
+    },
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image: "/images/anom/anom1.jpg",
+    },
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5oZn_ujpLbqEt8CVFMIcAA1rUzD4Al3NI8ZhnNqGxMWfT3kqPcugUSSDFeynM1pni5sw&usqp=CAU",
+    },
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image:
+        "https://www.seekpng.com/png/small/49-497487_unknown-clipart-man-silhouette-female-silhouette-question-mark.png",
+    },
+    {
+      name: "TBA",
+      genres: "",
+      setTime: "?? : ?? - ?? : ??",
+      description: "Quem será o(a) próximo(a) convocado(a)?",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRotl1upBUYkxMlVSxjzzQy1Crbdfw2vnzw1A&usqp=CAU",
     },
   ];
 
@@ -112,7 +184,7 @@ export const LineupSection = () => {
           </Text>
         </Flex>
         <Box>
-          <VerticalTimeline djs={djs} />
+          <VerticalTimeline djs={rebornStage} />
         </Box>
         <Flex
           direction={isWideVersion ? "row" : "column"}
@@ -144,7 +216,7 @@ export const LineupSection = () => {
           </Text>
         </Flex>
         <Box>
-          <VerticalTimeline djs={djs} />
+          <VerticalTimeline djs={sunLightStage} />
         </Box>
       </Box>
     </Box>

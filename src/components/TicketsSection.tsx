@@ -1,4 +1,10 @@
-import { Flex, VStack, useBreakpointValue, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  VStack,
+  useBreakpointValue,
+  Button,
+  Text,
+} from "@chakra-ui/react";
 import { CountdownSection } from "./CountdownSection";
 
 export const TicketsSection = () => {
@@ -35,7 +41,11 @@ export const TicketsSection = () => {
             fontWeight="bold"
             p={[8, 12]}
           >
-            PRE VENDA 01/11/2021
+            INÍCIO PRE VENDA{" "}
+            <Text as="mark" ml={2}>
+              {" "}
+              01/11/2021
+            </Text>
             {/* GARANTA SEU INGRESSO */}
           </Button>
         </Flex>

@@ -29,10 +29,10 @@ export const CountdownSection = () => {
 
     if (difference > 0) {
       timeLeft = {
-        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))),
-        hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)),
-        minutes: String(Math.floor((difference / 1000 / 60) % 60)),
-        seconds: String(Math.floor((difference / 1000) % 60)),
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
       };
     }
 
@@ -47,21 +47,6 @@ export const CountdownSection = () => {
     }, 1000);
     // Clear timeout if the component is unmounted
     return () => clearTimeout(timer);
-  });
-
-  const timerComponents = [];
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    //days
-
-    timerComponents.push(
-      <span>
-        {timeLeft[interval]} {interval}{" "}
-      </span>
-    );
   });
 
   return (
@@ -81,7 +66,7 @@ export const CountdownSection = () => {
           31/12/2021
         </Text>
         <Box color="gray.50" my={8}>
-          {timerComponents.length ? (
+          {timeLeft ? (
             <SimpleGrid
               columns={4}
               spacingX={["10px", "20px"]}
