@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useEffect, useState } from "react";
 
 import {
@@ -7,6 +8,13 @@ import {
   Box,
   useBreakpointValue,
 } from "@chakra-ui/react";
+
+type TimeLeft = {
+  days: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+};
 
 export const CountdownSection = () => {
   const eventDate = "12/31/2021";
@@ -20,18 +28,18 @@ export const CountdownSection = () => {
     let year = new Date().getFullYear();
     let difference = +new Date(eventDate) - +new Date();
     let timeLeft = {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
+      days: "0",
+      hours: "0",
+      minutes: "0",
+      seconds: "0",
     };
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))),
+        hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)),
+        minutes: String(Math.floor((difference / 1000 / 60) % 60)),
+        seconds: String(Math.floor((difference / 1000) % 60)),
       };
     }
 
@@ -49,17 +57,19 @@ export const CountdownSection = () => {
   });
 
   const timerComponents = [];
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
+  // Object.keys(timeLeft).forEach((interval) => {
+  //   if (!timeLeft[interval as keyof typeof TimeLeft]) {
+  //     return;
+  //   }
 
-    timerComponents.push(
-      <span>
-        {timeLeft[interval]} {interval}{" "}
-      </span>
-    );
-  });
+  //   //days
+
+  //   timerComponents.push(
+  //     <span>
+  //       {timeLeft[interval]} {interval}{" "}
+  //     </span>
+  //   );
+  // });
 
   return (
     <Container maxW={["xl", "7xl"]}>
@@ -73,6 +83,7 @@ export const CountdownSection = () => {
         >
           SAVE THE DATE
         </Text>
+
         <Text fontSize={["2xl", "6xl"]} mt={2} as="mark">
           31/12/2021
         </Text>
