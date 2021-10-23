@@ -20,7 +20,7 @@ export const PartySection = () => {
 
   return (
     <Element name="theParty">
-      <Container maxW={"5xl"} py={12}>
+      <Container maxW={"5xl"} py={8}>
         <Box align="center">
           <Text
             as="h2"
