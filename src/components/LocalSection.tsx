@@ -15,7 +15,7 @@ export const LocalSection = () => {
   return (
     <Box
       w={"full"}
-      py={12}
+      py={8}
       bgImage={`linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.5)),
         url(/images/local-dark.jpg)`}
       backgroundSize={"cover"}
