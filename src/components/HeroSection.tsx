@@ -11,7 +11,6 @@ import * as Scroll from "react-scroll";
 import { ArrowDownIcon } from "@chakra-ui/icons";
 
 export const HeroSection = () => {
-  let scroll = Scroll.animateScroll;
   let scroller = Scroll.scroller;
 
   return (
@@ -53,22 +52,44 @@ export const HeroSection = () => {
             compartilhando esse (re)começo com a gente, então reserve seu lugar
             através do nosso lote especial - e exclusivo - para nossos amigos.
           </Text>
+
           <Flex direction="column" align="center">
-            <Button
-              bg={"gray.900"}
-              rounded={"full"}
-              color={"white"}
-              _hover={{ bg: "gray.700" }}
-              onClick={() =>
-                scroller.scrollTo("theParty", {
-                  duration: 1500,
-                  delay: 100,
-                  smooth: true,
-                })
-              }
-            >
-              Saiba mais
-            </Button>
+            <Flex>
+              <Button
+                bg={"yellow.600"}
+                rounded={"full"}
+                color={"white"}
+                p={8}
+                w={"300px"}
+                transition={"ease-in 0.2s"}
+                _hover={{ bg: "#694316" }}
+                onClick={() =>
+                  scroller.scrollTo("theParty", {
+                    duration: 1500,
+                    delay: 100,
+                    smooth: true,
+                  })
+                }
+              >
+                SAIBA MAIS
+              </Button>
+              {/* <Button
+                bg={"gray.900"}
+                rounded={"full"}
+                color={"white"}
+                _hover={{ bg: "gray.700" }}
+                onClick={() =>
+                  scroller.scrollTo("theParty", {
+                    duration: 1500,
+                    delay: 100,
+                    smooth: true,
+                  })
+                }
+              >
+                Comprar ingresso
+              </Button> */}
+            </Flex>
+
             <ArrowDownIcon color={"white"} w={8} h={8} mt="4" />
           </Flex>
         </Stack>

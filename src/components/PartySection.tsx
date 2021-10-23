@@ -7,18 +7,17 @@ import {
   Text,
   Stack,
   Box,
+  Button,
 } from "@chakra-ui/react";
 
 import { ReactElement } from "react";
 import { Element } from "react-scroll";
 
-interface FeatureProps {
-  text: string;
-  iconBg: string;
-  icon?: ReactElement;
-}
+import * as Scroll from "react-scroll";
 
 export const PartySection = () => {
+  let scroll = Scroll.animateScroll;
+
   return (
     <Element name="theParty">
       <Container maxW={"5xl"} py={12}>
@@ -60,6 +59,23 @@ export const PartySection = () => {
               com você para renascer das cinzas conosco nessa linda e muito rica
               jornada. #TogetherWeReborn
             </Text>
+            <Button
+              bg={"yellow.600"}
+              rounded={"full"}
+              color={"white"}
+              transition={"ease-in 0.2s"}
+              _hover={{ bg: "#694316" }}
+              p={[6, 8]}
+              onClick={() =>
+                scroll.scrollToBottom({
+                  duration: 2500,
+                  delay: 50,
+                  smooth: true,
+                })
+              }
+            >
+              GARANTA SEU INGRESSO
+            </Button>
           </Stack>
           <Flex>
             <Image
