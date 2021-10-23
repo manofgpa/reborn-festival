@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
-import Card from "./Card";
 import { VerticalTimeline } from "./VerticalTimeline";
 
 export const LineupSection = () => {

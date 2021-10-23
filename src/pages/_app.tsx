@@ -6,6 +6,7 @@ import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "@fontsource/lexend/latin.css";
+import "../styles/verticalTimelineDate.css";
 
 import defaultSEOConfig from "../../next-seo.config";
 import createEmotionCache from "styles/createEmotionCache";

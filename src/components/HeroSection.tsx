@@ -38,11 +38,16 @@ export const HeroSection = () => {
             color={"white"}
             align={"center"}
             fontWeight={400}
-            lineHeight={1.2}
+            lineHeight={1.6}
+            fontSize={18}
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
-            libero voluptates consectetur totam, ab ipsum ullam, doloremque,
-            fugit voluptate aut iste ipsa fugiat odio unde rem voluptatum quos!
+            Sabemos que o ano de 2021 foi desafiador para todos nós: mudanças,
+            pandemia e tempos muito difíceis. Por isso, nada melhor do que
+            começar esse novo ciclo de 2022 em grande estilo. *O Reborn
+            Réveillon Festival * emergiu das cinzas para tornar essa virada de
+            ano uma noite inesquecível para todos nós! Queremos MUITO você
+            compartilhando esse (re)começo com a gente, então reserve seu lugar
+            através do nosso lote especial - e exclusivo - para nossos amigos.
           </Text>
           <Flex direction="column" align="center">
             <Button

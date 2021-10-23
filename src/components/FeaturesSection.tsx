@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
-import Card from "../components/Card";
+import Card from "./Card";
 
 function FeaturesSection() {
   const isWideVersion = useBreakpointValue({

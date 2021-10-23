@@ -29,6 +29,7 @@ export const VerticalTimeline = ({ djs }: VerticalTimelineProps) => {
           contentStyle={{ background: "#8a561b", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  #8a561b" }}
           date={dj.setTime}
+          dateClassName="vertical-timeline-date"
           iconStyle={{ background: "#000", color: "#fff" }}
           icon={<HiOutlineMusicNote />}
         >
@@ -45,6 +46,7 @@ export const VerticalTimeline = ({ djs }: VerticalTimelineProps) => {
         contentStyle={{ background: "#8a561b", color: "#fff" }}
         contentArrowStyle={{ borderRight: "7px solid  #8a561b" }}
         date="11:00"
+        dateClassName="vertical-timeline-date"
         iconStyle={{ background: "green", color: "#fff" }}
         icon={<HiCheck />}
       >
