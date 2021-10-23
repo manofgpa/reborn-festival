@@ -24,6 +24,7 @@ export default function Card({ data }: CardProps) {
     <>
       {data?.map((card) => (
         <Box
+          key={card.name}
           role={"group"}
           p={6}
           mt={16}

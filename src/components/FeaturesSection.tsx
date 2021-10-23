@@ -13,7 +13,7 @@ function FeaturesSection() {
       name: "Bebidas",
       slug: "Open bar",
       image: "/images/bebidas.jpg",
-      description: `A noite toda de diversos drinks contendo Gin, Vodka, Champanhe, Redbull, Refri e
+      description: `A NOITE TODA de diversos drinks contando com gin, vodka, champanhe, redbull, refri e
               água!`,
     },
     {
@@ -30,12 +30,12 @@ function FeaturesSection() {
       image:
         "https://images.squarespace-cdn.com/content/v1/5702d87ba3360c0321df9b42/1563234193886-2WSWPFEM5QLC6650X3GK/ideas-for-surprise-birthday-party-for-best-friend.jpg?format=2500w",
       description:
-        "Venha preparado para uma virada de ano épica com muito amor e muita vibe! ",
+        "Venha preparado para uma virada de ano épica com muito amor, som e vibe! ",
     },
   ];
 
   return (
-    <Box bgColor="yellow.800" py={[8, 12]} mt="8" px={2}>
+    <Box bgColor="yellow.600" py={[8, 12]} mt="8" px={2}>
       <Box align="center">
         <Text
           as="h2"
@@ -43,7 +43,7 @@ function FeaturesSection() {
           fontSize={["3xl", "4xl"]}
           maxWidth={{ base: "100vh", md: "130vh", lg: "130vh", xl: "130vh" }}
         >
-          EXPERIÊNCIAS
+          AS EXPERIÊNCIAS
           <Text as="p" fontSize={["xl", "2xl"]} fontWeight="300">
             Para deixar o ano novo ainda mais incrível.
           </Text>
@@ -52,7 +52,6 @@ function FeaturesSection() {
       <Flex
         direction={isWideVersion ? "row" : "column"}
         w="100%"
-        // maxWidth={{ base: "100vh", md: "130vh", lg: "130vh", xl: "130vh" }}
         align="center"
         justify="center"
       >

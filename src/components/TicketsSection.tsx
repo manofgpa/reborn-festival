@@ -29,13 +29,14 @@ export const TicketsSection = () => {
             colorScheme="green"
             rounded={"full"}
             color={"white"}
-            _hover={{ bg: "#8a561b" }}
+            _hover={{ bg: "yellow.600" }}
             w={["250px", "500px"]}
             fontSize={["14px", "20px"]}
             fontWeight="bold"
             p={[8, 12]}
           >
-            GARANTA SEU INGRESSO
+            PRE VENDA 01/11/2021
+            {/* GARANTA SEU INGRESSO */}
           </Button>
         </Flex>
       </VStack>

@@ -9,13 +9,6 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 
-type TimeLeft = {
-  days: string;
-  hours: string;
-  minutes: string;
-  seconds: string;
-};
-
 export const CountdownSection = () => {
   const eventDate = "12/31/2021";
 
@@ -27,11 +20,11 @@ export const CountdownSection = () => {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
     let difference = +new Date(eventDate) - +new Date();
-    let timeLeft = {
-      days: "0",
-      hours: "0",
-      minutes: "0",
-      seconds: "0",
+    let timeLeft: any = {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
     };
 
     if (difference > 0) {
@@ -57,19 +50,19 @@ export const CountdownSection = () => {
   });
 
   const timerComponents = [];
-  // Object.keys(timeLeft).forEach((interval) => {
-  //   if (!timeLeft[interval as keyof typeof TimeLeft]) {
-  //     return;
-  //   }
+  Object.keys(timeLeft).forEach((interval) => {
+    if (!timeLeft[interval]) {
+      return;
+    }
 
-  //   //days
+    //days
 
-  //   timerComponents.push(
-  //     <span>
-  //       {timeLeft[interval]} {interval}{" "}
-  //     </span>
-  //   );
-  // });
+    timerComponents.push(
+      <span>
+        {timeLeft[interval]} {interval}{" "}
+      </span>
+    );
+  });
 
   return (
     <Container maxW={["xl", "7xl"]}>

@@ -4,13 +4,13 @@ import { DeepPartial, Theme } from "@chakra-ui/react";
 const extendedColors: DeepPartial<
   Record<string, Theme["colors"]["blackAlpha"]>
 > = {
-  brand: {
+  yellow: {
     100: "",
     200: "",
     300: "",
     400: "",
     500: "",
-    600: "",
+    600: "#8a561b",
     700: "",
     800: "",
     900: "",
