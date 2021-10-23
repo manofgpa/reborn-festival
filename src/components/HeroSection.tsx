@@ -6,10 +6,14 @@ import {
   VStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import * as Scroll from "react-scroll";
 
 import { ArrowDownIcon } from "@chakra-ui/icons";
 
 export const HeroSection = () => {
+  let scroll = Scroll.animateScroll;
+  let scroller = Scroll.scroller;
+
   return (
     <Flex
       w={"full"}
@@ -55,6 +59,13 @@ export const HeroSection = () => {
               rounded={"full"}
               color={"white"}
               _hover={{ bg: "gray.700" }}
+              onClick={() =>
+                scroller.scrollTo("theParty", {
+                  duration: 1500,
+                  delay: 100,
+                  smooth: true,
+                })
+              }
             >
               Saiba mais
             </Button>
