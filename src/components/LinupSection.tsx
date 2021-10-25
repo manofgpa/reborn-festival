@@ -23,7 +23,6 @@ export const LineupSection = () => {
       setTime: "?? : ?? - ?? : ??",
       description:
         "Se você curte o mundo da House Music, este é um set que você não pode perder. Nadando em referências de Jackin’, Mambo, Moody e Funky House, Djenko usa e abusa das fortes linhas de grave com muitos elementos orgânicos e promete proporcionar para o público uma vibe incrível sem deixar ninguém parado.",
-
       image: "/images/djs/edman.jpeg",
     },
     {
