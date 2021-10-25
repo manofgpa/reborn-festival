@@ -1,7 +1,7 @@
 import React from "react";
 
-import { AiFillInfoCircle } from "react-icons/ai";
-import { SiGooglestreetview } from "react-icons/si";
+import { AiOutlineInfoCircle, AiOutlineWarning } from "react-icons/ai";
+import { BsPinMap } from "react-icons/bs";
 import { Box, Flex, Text, useBreakpointValue, Icon } from "@chakra-ui/react";
 
 import { Carousel } from "./Carousel";
@@ -52,12 +52,16 @@ export const LocalSection = () => {
               jogos.
             </Text>
             <Text mt={4}>
-              <Icon as={SiGooglestreetview} fontSize={20} mr={0.25} />
+              <Icon as={BsPinMap} fontSize={20} mr={0.5} />
               Endereco: Rua Agrolândia, 266
             </Text>
             <Text mt={4}>
-              <Icon as={AiFillInfoCircle} fontSize={20} mr={0.25} />
+              <Icon as={AiOutlineInfoCircle} fontSize={20} mr={0.5} />
               Teremos estacionamento gratuito no local!
+            </Text>
+            <Text mt={4}>
+              <Icon as={AiOutlineWarning} fontSize={20} mr={0.5} />
+              Se beber não dirija!
             </Text>
           </Box>
         </Box>
