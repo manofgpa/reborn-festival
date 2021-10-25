@@ -25,7 +25,7 @@ export const VerticalTimeline = ({ djs }: VerticalTimelineProps) => {
     <VerticalTime>
       {djs?.map((dj) => (
         <VerticalTimelineElement
-          key={dj.name}
+          key={`${dj.name} ${Math.random()}`}
           className="vertical-timeline-element--work"
           contentStyle={{ background: "#8a561b", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  #8a561b" }}
