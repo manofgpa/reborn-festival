@@ -5,6 +5,7 @@ import {
   Text,
   VStack,
   useBreakpointValue,
+  Image,
 } from "@chakra-ui/react";
 import * as Scroll from "react-scroll";
 
@@ -17,7 +18,7 @@ export const HeroSection = () => {
     <Flex
       w={"full"}
       h={"100vh"}
-      bgImage={`linear-gradient(rgba(0, 0, 0, 0.445),rgba(0, 0, 0, 0.5)),
+      bgImage={`linear-gradient(rgba(0, 0, 0, 0.545),rgba(0, 0, 0, 0.8)),
         url(/images/audience.jpg)`}
       backgroundSize={"cover"}
       backgroundPosition={"center center"}
@@ -28,6 +29,7 @@ export const HeroSection = () => {
         px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
       >
+        <Image src={"/images/logo.png"} />
         <Stack maxW={"2xl"} align={"center"} spacing={6}>
           <Text
             as="h1"
