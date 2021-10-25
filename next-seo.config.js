@@ -1,26 +1,22 @@
 /** @type {import('next-seo').DefaultSeoProps} */
 const defaultSEOConfig = {
-  title: "nextarter-chakra",
-  titleTemplate: "%s | nextarter-chakra",
-  defaultTitle: "nextarter-chakra",
-  description: "Next.js + chakra-ui + TypeScript template",
-  canonical: "https://nextarter-chakra.sznm.dev",
+  title: "Reborn Festival",
+  titleTemplate: "Reborn Festival",
+  defaultTitle: "Reborn Festival",
+  description: "Um reveillon épico",
+  canonical: "https://www.rebornfestival.com.br",
   openGraph: {
-    url: "https://nextarter-chakra.sznm.dev",
-    title: "nextarter-chakra",
-    description: "Next.js + chakra-ui + TypeScript template",
+    url: "https://www.rebornfestival.com.br",
+    title: "Reborn Festival",
+    description: "Um reveillon épico",
     images: [
       {
-        url: "https://og-image.sznm.dev/**nextarter-chakra**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250",
-        alt: "nextarter-chakra.sznm.dev og-image",
+        url: "https://www.rebornfestival.com.br",
+        alt: "Reborn Festival logo",
       },
     ],
-    site_name: "nextarter-chakra",
-  },
-  twitter: {
-    handle: "@sozonome",
-    cardType: "summary_large_image",
-  },
-};
+    site_name: "Reborn Festival",
+  }
+}
 
-export default defaultSEOConfig;
+export default defaultSEOConfig

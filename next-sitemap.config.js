@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 const NextSitemapConfig = {
-  siteUrl: "https://nextarter-chakra.sznm.dev",
+  siteUrl: "https://www.rebornfestival.com.br",
   generateRobotsTxt: true,
-};
+}
 
-module.exports = NextSitemapConfig;
+module.exports = NextSitemapConfig
