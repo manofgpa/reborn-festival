@@ -19,11 +19,12 @@ export const LineupSection = () => {
     },
     {
       name: "Djenko",
-      genres: "Bass Music / Desande",
+      genres: "House",
       setTime: "?? : ?? - ?? : ??",
       description:
-        "Edison Borges, nome original do artista, é dono de uma sonoridade peculiar; uma mistura bem sucedida entre techno, EDM e deep brasileiro, que tem o grave como forte característica. Ao utilizar elementos de diferentes estilos, sua música representa toda a miscigenação do país, traduzindo-se num som tipicamente brasileiro.",
-      image: "/images/djs/edman-superman.jpg",
+        "Se você curte o mundo da House Music, este é um set que você não pode perder. Nadando em referências de Jackin’, Mambo, Moody e Funky House, Djenko usa e abusa das fortes linhas de grave com muitos elementos orgânicos e promete proporcionar para o público uma vibe incrível sem deixar ninguém parado.",
+
+      image: "/images/djs/edman.jpeg",
     },
     {
       name: "Jama",
@@ -31,8 +32,7 @@ export const LineupSection = () => {
       setTime: "?? : ?? - ?? : ??",
       description:
         "Com vibe dançante, Jama carrega originalidade: o mix perfeito entre as nuances do grave potente, característica marcante do artista, com experimentações inovadoras através dos vocais debochados do funk carioca e o salseiro mexicano que une tudo como uma deliciosa guacamole.",
-      image:
-        "https://pps.whatsapp.net/v/t61.24694-24/68846493_2508886475871757_5009782830536851456_n.jpg?ccb=11-4&oh=eb3431c344c3513e52a0223d91e11965&oe=61770BE5",
+      image: "/images/djs/ale.jpg",
     },
     {
       name: "TBA",
