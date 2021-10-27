@@ -18,6 +18,8 @@
     "@emotion/styled": "^11.3.0",
     "@fontsource/lexend": "^4.5.1",
     "@hookform/resolvers": "^2.8.2",
+    "@stripe/stripe-js": "^1.20.3",
+    "@types/axios": "^0.14.0",
     "@types/react-slick": "^0.23.7",
     "@types/stripe": "^8.0.417",
     "axios": "^0.24.0",

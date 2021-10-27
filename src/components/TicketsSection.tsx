@@ -5,9 +5,25 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
+import { api } from "services/api";
+import { getStripeJs } from "services/stripe-js";
 import { CountdownSection } from "./CountdownSection";
 
 export const TicketsSection = () => {
+  const handlePurchase = async () => {
+    try {
+      const response = await api.post("/buy");
+
+      const { sessionId } = response.data;
+
+      const stripe = await getStripeJs();
+
+      await stripe.redirectToCheckout({ sessionId });
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
     <Flex
       w={"full"}
@@ -41,6 +57,7 @@ export const TicketsSection = () => {
             fontWeight="bold"
             p={[8, 12]}
             cursor="not-allowed"
+            onClick={handlePurchase}
           >
             INÍCIO PRE VENDA{" "}
             <Text as="mark" ml={2}>
