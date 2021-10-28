@@ -69,13 +69,13 @@ export const Form = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await api.post("/buy", data);
+      const response = await api.post("/buy", { data });
 
       const { sessionId } = response.data;
 
       const stripe = await getStripeJs();
 
-      await api.post("create_user", { data });
+      // await api.post("create_user", { data });
 
       await stripe.redirectToCheckout({
         sessionId,
