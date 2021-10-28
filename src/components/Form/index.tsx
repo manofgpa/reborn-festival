@@ -10,27 +10,39 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+
+import InputMask from "react-input-mask";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { getStripeJs } from "services/stripe-js";
 import { api } from "services/api";
 
-const schema = yup
-  .object({
-    first_name: yup.string().required("Este campo é obrigatório."),
-    last_name: yup.string().required("Este campo é obrigatório."),
-    email: yup
-      .string()
-      .email("Deve ser um e-mail válido.")
-      .required("Este campo é obrigatório."),
-    email_confirmation: yup
-      .string()
-      .oneOf(
-        [null, yup.ref("email")],
-        "Os e-mails devem ser iguais, seu frito."
-      ),
-  })
-  .required();
+const schema = yup.object({
+  first_name: yup.string().required("Este campo é obrigatório."),
+  last_name: yup.string().required("Este campo é obrigatório."),
+  telephone_number: yup
+    .string()
+    .matches(
+      /(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/g,
+      "Nũmero de celular não é válido."
+    )
+    .required("Este campo é obrigatório."),
+  cpf: yup
+    .string()
+    .matches(
+      /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/g,
+      "CPF não é válido."
+    )
+    .required("Este campo é obrigatório."),
+  email: yup
+    .string()
+    .email("Deve ser um e-mail válido.")
+    .required("Este campo é obrigatório."),
+  email_confirmation: yup
+    .string()
+    .oneOf([null, yup.ref("email")], "Os e-mails devem ser iguais, seu frito.")
+    .required("Este campo é obrigatório."),
+});
 
 export const Form = () => {
   const {
@@ -41,11 +53,9 @@ export const Form = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     alert(JSON.stringify(data, null, 2));
-  };
 
-  const handlePurchase = async () => {
     try {
       const response = await api.post("/buy");
 
@@ -70,7 +80,7 @@ export const Form = () => {
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl isInvalid={errors.name}>
-          <SimpleGrid columns={2} spacing={4}>
+          <SimpleGrid columns={2} spacing={6}>
             <Box>
               <FormLabel htmlFor="first_name">Nome</FormLabel>
               <Input
@@ -95,6 +105,40 @@ export const Form = () => {
               />
               <Text fontSize={14} color="red.500" align="left">
                 {errors.last_name?.message}
+              </Text>
+            </Box>
+            <Box>
+              <FormLabel htmlFor="telephone_number">Telefone</FormLabel>
+              <Input
+                as={InputMask}
+                mask="(**) *****-****"
+                maskChar={null}
+                id="telephone_number"
+                type="text"
+                {...register("telephone_number", {
+                  required: "Este campo é obrigatório",
+                  maxLength: 20,
+                })}
+              />
+              <Text fontSize={14} color="red.500" align="left">
+                {errors.telephone_number?.message}
+              </Text>
+            </Box>
+            <Box>
+              <FormLabel htmlFor="cpf">CPF</FormLabel>
+              <Input
+                as={InputMask}
+                mask="***.***.***-**"
+                maskChar={null}
+                id="cpf"
+                type="text"
+                {...register("cpf", {
+                  required: "Este campo é obrigatório",
+                  maxLength: 20,
+                })}
+              />
+              <Text fontSize={14} color="red.500" align="left">
+                {errors.cpf?.message}
               </Text>
             </Box>
             <Box>
