@@ -8,7 +8,35 @@ import {
   Image,
   Box,
 } from "@chakra-ui/react";
+import { ParticlesComponent } from "components/Particles";
+
+import { tsParticles } from "tsparticles";
 
 export default function Success() {
-  return <Box h={"100vh"} bgColor={"gray.900"}></Box>;
+  return (
+    <>
+      <ParticlesComponent />
+      <Box h="100vh" id="tsparticles">
+        <Box
+          maxWidth={600}
+          align="center"
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          w="100%"
+          mt={[32, 0]}
+          pb={[4, 0]}
+        >
+          <Image src={"/images/logo.png"} my={2} />
+          <Box bgColor="yellow.600" py={[8, 12]} borderRadius={["0", "24"]}>
+            <Text fontSize={["3xl", "4xl"]} color="gray.50">
+              PRESENÇA CONFIRMADA
+            </Text>
+          </Box>
+          <Text fontSize={"4xl"}></Text>
+        </Box>
+      </Box>
+    </>
+  );
 }
