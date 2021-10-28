@@ -71,11 +71,10 @@ export const Form = () => {
     try {
       const response = await api.post("/buy", { data });
 
-      const { sessionId } = response.data;
+      const { sessionId, customer } = response.data;
 
       const stripe = await getStripeJs();
-
-      // await api.post("create_user", { data });
+      console.log(response.data);
 
       await stripe.redirectToCheckout({
         sessionId,

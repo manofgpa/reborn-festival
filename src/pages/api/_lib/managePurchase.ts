@@ -8,14 +8,18 @@ export async function managePurchase(
   customerId: string,
   createAction = false
 ) {
-  console.log(paymentIntent, customerId);
+  try {
+    const userRef = await fauna.query(
+      q.Select(
+        "ref",
+        q.Get(q.Match(q.Index("user_by_stripe_customer_id"), customerId))
+      )
+    );
 
-  const userRef = await fauna.query(
-    q.Select(
-      "ref",
-      q.Get(q.Match(q.Index("user_by_stripe_customer_id"), customerId))
-    )
-  );
+    console.log(userRef);
+  } catch (error) {
+    console.log(error);
+  }
 
   // const subscription = await stripe.subscriptions.retrieve(paymentIntent);
 
