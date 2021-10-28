@@ -5,11 +5,13 @@ import { query as q } from "faunadb";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     try {
-      const { first_name, last_name, email, cpf, quantity } = req.body.data;
+      const { first_name, last_name, email, cpf, telephone, quantity } =
+        req.body.data;
 
       const data = {
         first_name,
         last_name,
+        telephone,
         email,
         cpf,
         quantity,
