@@ -5,25 +5,10 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
-import { api } from "services/api";
-import { getStripeJs } from "services/stripe-js";
 import { CountdownSection } from "./CountdownSection";
+import Link from "next/link";
 
 export const TicketsSection = () => {
-  const handlePurchase = async () => {
-    try {
-      const response = await api.post("/buy");
-
-      const { sessionId } = response.data;
-
-      const stripe = await getStripeJs();
-
-      await stripe.redirectToCheckout({ sessionId });
-    } catch (error) {
-      alert(error);
-    }
-  };
-
   return (
     <Flex
       w={"full"}
@@ -47,25 +32,26 @@ export const TicketsSection = () => {
           p={[6, 8]}
         >
           <CountdownSection />
-          <Button
-            colorScheme="green"
-            rounded={"full"}
-            color={"white"}
-            _hover={{ bg: "yellow.600" }}
-            w={["250px", "500px"]}
-            fontSize={["14px", "20px"]}
-            fontWeight="bold"
-            p={[8, 12]}
-            cursor="not-allowed"
-            onClick={handlePurchase}
-          >
-            INÍCIO PRE VENDA{" "}
-            <Text as="mark" ml={2}>
-              {" "}
-              01/11/2021
-            </Text>
-            {/* GARANTA SEU INGRESSO */}
-          </Button>
+          <Link href="/ingresso">
+            <Button
+              colorScheme="green"
+              rounded={"full"}
+              color={"white"}
+              _hover={{ bg: "yellow.600" }}
+              w={["250px", "500px"]}
+              fontSize={["14px", "20px"]}
+              fontWeight="bold"
+              p={[8, 12]}
+              cursor="not-allowed"
+            >
+              INÍCIO PRE VENDA{" "}
+              <Text as="mark" ml={2}>
+                {" "}
+                01/11/2021
+              </Text>
+              {/* GARANTA SEU INGRESSO */}
+            </Button>
+          </Link>
         </Flex>
       </VStack>
     </Flex>

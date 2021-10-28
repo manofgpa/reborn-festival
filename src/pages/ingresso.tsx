@@ -1,12 +1,13 @@
 import React from "react";
 import { Form } from "../components/Form";
 
+import { Box } from "@chakra-ui/react";
+
 const Ingresso = () => {
   return (
-    <div>
-      <h1>pagina de ingresso</h1>
+    <Box h="100vh">
       <Form />
-    </div>
+    </Box>
   );
 };
 

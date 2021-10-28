@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { getStripeJs } from "services/stripe-js";
+import { api } from "services/api";
 
 const schema = yup
   .object({
@@ -43,8 +45,29 @@ export const Form = () => {
     alert(JSON.stringify(data, null, 2));
   };
 
+  const handlePurchase = async () => {
+    try {
+      const response = await api.post("/buy");
+
+      const { sessionId } = response.data;
+
+      const stripe = await getStripeJs();
+
+      await stripe.redirectToCheckout({ sessionId });
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
-    <Box maxWidth={600} m="0 auto" align="center">
+    <Box
+      maxWidth={600}
+      align="center"
+      position="absolute"
+      top="50%"
+      left="50%"
+      transform="translate(-50%, -50%)"
+    >
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl isInvalid={errors.name}>
           <SimpleGrid columns={2} spacing={4}>
