@@ -2,15 +2,18 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { stripe } from "../../services/stripe";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  const { quantity, email } = req.body;
+
   if (req.method === "POST") {
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       payment_method_types: ["card", "boleto"],
       locale: "pt-BR",
       billing_address_collection: "auto",
+      customer_email: email,
       line_items: [
         {
           price: process.env.STRIPE_TEST_PRICE,
-          quantity: 1,
+          quantity,
           adjustable_quantity: {
             enabled: true,
           },

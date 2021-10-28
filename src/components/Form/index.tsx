@@ -23,6 +23,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { getStripeJs } from "services/stripe-js";
 import { api } from "services/api";
+import { fauna } from "../../services/fauna";
 
 const schema = yup.object({
   first_name: yup.string().required("Este campo é obrigatório."),
@@ -67,15 +68,18 @@ export const Form = () => {
   });
 
   const onSubmit = async (data) => {
-    alert(JSON.stringify(data, null, 2));
     try {
-      const response = await api.post("/buy");
+      const response = await api.post("/buy", data);
 
       const { sessionId } = response.data;
 
       const stripe = await getStripeJs();
 
-      await stripe.redirectToCheckout({ sessionId });
+      await api.post("create_user", { data });
+
+      await stripe.redirectToCheckout({
+        sessionId,
+      });
     } catch (error) {
       alert(error);
     }
@@ -236,13 +240,11 @@ export const Form = () => {
         <Button
           mt={8}
           p={6}
-          bgColor="yellow.600"
-          _hover={{ bg: "#694316" }}
-          transition={"ease-in 0.2s"}
+          colorScheme="green"
           isLoading={isSubmitting}
           type="submit"
         >
-          Pagamento
+          Ir para o Pagamento
         </Button>
       </form>
     </Box>

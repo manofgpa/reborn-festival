@@ -32,7 +32,7 @@ export const TicketsSection = () => {
           p={[6, 8]}
         >
           <CountdownSection />
-          <Link href="/ingresso">
+          <Link href="/comprar">
             <Button
               colorScheme="green"
               rounded={"full"}
