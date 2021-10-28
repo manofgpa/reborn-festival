@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useForm, Controller } from "react-hook-form";
 import {
   FormErrorMessage,
