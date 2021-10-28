@@ -1,5 +1,4 @@
-import { useForm } from "react-hook-form";
-import React from "react";
+import { useForm, Controller } from "react-hook-form";
 import {
   FormErrorMessage,
   FormLabel,
@@ -9,6 +8,14 @@ import {
   Box,
   SimpleGrid,
   Text,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
+  NumberInputField,
+  NumberInputStepper,
+  NumberInput,
+  HStack,
+  useNumberInput,
+  Image,
 } from "@chakra-ui/react";
 
 import InputMask from "react-input-mask";
@@ -42,11 +49,17 @@ const schema = yup.object({
     .string()
     .oneOf([null, yup.ref("email")], "Os e-mails devem ser iguais, seu frito.")
     .required("Este campo é obrigatório."),
+  quantity: yup
+    .number()
+    .min(1, "Mínimo 1 ingresso.")
+    .max(4, "Máximo 4 ingressos por CPF.")
+    .required("Este campo é obrigatório."),
 });
 
 export const Form = () => {
   const {
     handleSubmit,
+    control,
     register,
     formState: { errors, isSubmitting },
   } = useForm({
@@ -55,7 +68,6 @@ export const Form = () => {
 
   const onSubmit = async (data) => {
     alert(JSON.stringify(data, null, 2));
-
     try {
       const response = await api.post("/buy");
 
@@ -77,10 +89,19 @@ export const Form = () => {
       top="50%"
       left="50%"
       transform="translate(-50%, -50%)"
+      w="100%"
+      mt={[32, 0]}
+      pb={[4, 0]}
     >
+      <Image src={"/images/logo.png"} my={4} />
+      <Box bgColor="yellow.600" py={[8, 12]} borderRadius="24">
+        <Text fontSize={["3xl", "4xl"]} color="gray.50">
+          Dados do Comprador
+        </Text>
+      </Box>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormControl isInvalid={errors.name}>
-          <SimpleGrid columns={2} spacing={6}>
+          <SimpleGrid columns={2} spacing={6} minChildWidth={"240px"} m={4}>
             <Box>
               <FormLabel htmlFor="first_name">Nome</FormLabel>
               <Input
@@ -172,15 +193,56 @@ export const Form = () => {
               </Text>
             </Box>
           </SimpleGrid>
+          <Box>
+            <Text m="2" align="center">
+              Quantidade de ingressos
+            </Text>
+            <Controller
+              control={control}
+              {...register("quantity", {
+                required: "Este campo é obrigatório",
+                maxLength: 20,
+              })}
+              render={({ field: { ref, ...restField } }) => (
+                <NumberInput {...restField}>
+                  <HStack maxW="320px">
+                    <NumberDecrementStepper
+                      bgColor="gray.500"
+                      _hover={{ bg: "red.700" }}
+                      transition={"ease-in 0.2s"}
+                      p={3}
+                      borderRadius={6}
+                      border="none"
+                    />
+                    <NumberInputField ref={ref} name={restField.name} />
+                    <NumberIncrementStepper
+                      bgColor="gray.500"
+                      _hover={{ bg: "green.700" }}
+                      transition={"ease-in 0.2s"}
+                      p={3}
+                      borderRadius={6}
+                      border="none"
+                    />
+                  </HStack>
+                </NumberInput>
+              )}
+            />
+            <Text fontSize={14} color="red.500" align="center">
+              {errors.quantity?.message}
+            </Text>
+          </Box>
           <FormErrorMessage>{errors.name && errors.message}</FormErrorMessage>
         </FormControl>
         <Button
-          mt={4}
-          colorScheme="teal"
+          mt={8}
+          p={6}
+          bgColor="yellow.600"
+          _hover={{ bg: "#694316" }}
+          transition={"ease-in 0.2s"}
           isLoading={isSubmitting}
           type="submit"
         >
-          Submit
+          Pagamento
         </Button>
       </form>
     </Box>
