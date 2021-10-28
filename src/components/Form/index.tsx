@@ -57,6 +57,16 @@ const schema = yup.object({
     .required("Este campo é obrigatório."),
 });
 
+type User = {
+  first_name: string;
+  last_name: string;
+  quantity: number;
+  email_confirmation: string;
+  email: string;
+  telephone: string;
+  cpf: string;
+};
+
 export const Form = () => {
   const {
     handleSubmit,
@@ -67,7 +77,7 @@ export const Form = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: User) => {
     try {
       const response = await api.post("/buy", { data });
 

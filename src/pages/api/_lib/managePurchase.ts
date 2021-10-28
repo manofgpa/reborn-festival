@@ -16,33 +16,21 @@ export async function managePurchase(
       )
     );
 
-    console.log(userRef);
+    const payment = await stripe.paymentIntents.retrieve(paymentIntent);
+
+    const paymentData = {
+      created_at: payment.created,
+      id: payment.id,
+      userId: userRef,
+      status: payment.status,
+      amount: payment.amount_received,
+      quantity: payment.amount_received / 100 / 250,
+    };
+
+    await fauna.query(
+      q.Create(q.Collection("purchases"), { data: paymentData })
+    );
   } catch (error) {
     console.log(error);
   }
-
-  // const subscription = await stripe.subscriptions.retrieve(paymentIntent);
-
-  // const subscriptionData = {
-  //   id: subscription.id,
-  //   userId: userRef,
-  //   status: subscription.status,
-  //   price_id: subscription.items.data[0].price.id,
-  // };
-
-  // if (createAction) {
-  //   await fauna.query(
-  //     q.Create(q.Collection("subscriptions"), { data: subscriptionData })
-  //   );
-  // } else {
-  //   await fauna.query(
-  //     q.Replace(
-  //       q.Select(
-  //         "ref",
-  //         q.Get(q.Match(q.Index("subscription_by_id"), paymentIntent))
-  //       ),
-  //       { data: subscriptionData }
-  //     )
-  //   );
-  // }
 }
