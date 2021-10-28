@@ -24,8 +24,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       let customerId = stripeCustomer.id;
 
-      console.log("usuario criado no stripe, id => ", customerId);
-
       const data = {
         stripe_customer_id: customerId,
         first_name,
@@ -38,8 +36,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       };
 
       await fauna.query(q.Create(q.Collection("users"), { data }));
-
-      console.log("usuario criado no fauna");
 
       const stripeCheckoutSession = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
@@ -57,8 +53,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         ],
         mode: "payment",
         allow_promotion_codes: true,
-        success_url: process.env.STRIPE_SUCCESS_URL,
-        cancel_url: process.env.STRIPE_CANCEL_URL,
+        success_url: process.env.STRIPE_SUCCESS_URL
+          ? process.env.STRIPE_SUCCESS_URL
+          : "",
+        cancel_url: process.env.STRIPE_CANCEL_URL
+          ? process.env.STRIPE_CANCEL_URL
+          : "",
       });
 
       return res.status(200).json({

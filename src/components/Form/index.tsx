@@ -86,7 +86,6 @@ export const Form = () => {
       const { sessionId, customer } = response.data;
 
       const stripe = await getStripeJs();
-      console.log(response.data);
 
       if (stripe) {
         await stripe.redirectToCheckout({

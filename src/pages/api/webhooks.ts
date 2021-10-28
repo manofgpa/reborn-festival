@@ -34,36 +34,45 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     let event: Stripe.Event;
 
     try {
-      event = stripe.webhooks.constructEvent(
-        buf,
-        secret,
-        process.env.STRIPE_WEBHOOK_SECRET
-      );
-    } catch (err) {
-      return res.status(400).send(`Webhook error: ${err.message}`);
-    }
+      if (secret) {
+        event = stripe.webhooks.constructEvent(
+          buf,
+          secret,
+          process.env.STRIPE_WEBHOOK_SECRET
+            ? process.env.STRIPE_WEBHOOK_SECRET
+            : ""
+        );
 
-    const type = event.type;
+        const { type } = event;
 
-    if (relevantEvents.has(type)) {
-      try {
-        switch (type) {
-          case "checkout.session.completed":
-            const checkoutSession = event.data
-              .object as Stripe.Checkout.Session;
+        if (relevantEvents.has(type)) {
+          try {
+            switch (type) {
+              case "checkout.session.completed":
+                const checkoutSession = event.data
+                  .object as Stripe.Checkout.Session;
 
-            await managePurchase(
-              checkoutSession.payment_intent?.toString(),
-              checkoutSession.customer?.toString()
-            );
+                if (
+                  checkoutSession.payment_intent &&
+                  checkoutSession.customer
+                ) {
+                  await managePurchase(
+                    checkoutSession.payment_intent.toString(),
+                    checkoutSession.customer.toString()
+                  );
+                }
 
-            break;
-          default:
-            throw new Error("Unhandled event");
+                break;
+              default:
+                throw new Error("Unhandled event");
+            }
+          } catch (err) {
+            return res.json({ error: "Webhook handler failed" });
+          }
         }
-      } catch (err) {
-        return res.json({ error: "Webhook handler failed" });
       }
+    } catch (err: any) {
+      return res.status(400).send(`Webhook error: ${err.message}`);
     }
 
     res.json({ received: true });
