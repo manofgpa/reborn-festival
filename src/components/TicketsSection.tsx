@@ -42,14 +42,8 @@ export const TicketsSection = () => {
               fontSize={["14px", "20px"]}
               fontWeight="bold"
               p={[8, 12]}
-              cursor="not-allowed"
             >
-              INÍCIO PRE VENDA{" "}
-              <Text as="mark" ml={2}>
-                {" "}
-                01/11/2021
-              </Text>
-              {/* GARANTA SEU INGRESSO */}
+              GARANTA SEU INGRESSO
             </Button>
           </Link>
         </Flex>

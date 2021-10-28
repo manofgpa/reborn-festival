@@ -109,8 +109,8 @@ export const Form = () => {
       mt={[32, 0]}
       pb={[4, 0]}
     >
-      <Image src={"/images/logo.png"} my={4} />
-      <Box bgColor="yellow.600" py={[8, 12]} borderRadius="24">
+      <Image src={"/images/logo.png"} my={2} />
+      <Box bgColor="yellow.600" py={[8, 12]} borderRadius={["0", "24"]}>
         <Text fontSize={["3xl", "4xl"]} color="gray.50">
           Dados do Comprador
         </Text>
