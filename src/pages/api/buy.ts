@@ -24,19 +24,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       let customerId = stripeCustomer.id;
 
-      const data = {
-        stripe_customer_id: customerId,
-        first_name,
-        last_name,
-        telephone_number,
-        email,
-        cpf,
-        quantity,
-        paid: false,
-      };
-
-      await fauna.query(q.Create(q.Collection("users"), { data }));
-
       const stripeCheckoutSession = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         locale: "pt-BR",
@@ -56,6 +43,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         success_url: `https://${req.headers.host}/success`,
         cancel_url: `https://${req.headers.host}/comprar`,
       });
+
+      const data = {
+        sessionId: stripeCheckoutSession.id,
+        stripe_customer_id: customerId,
+        first_name,
+        last_name,
+        telephone_number,
+        email,
+        cpf,
+        quantity,
+      };
+
+      await fauna.query(q.Create(q.Collection("users"), { data }));
 
       return res.status(200).json({
         sessionId: stripeCheckoutSession.id,

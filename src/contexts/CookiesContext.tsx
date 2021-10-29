@@ -19,14 +19,6 @@ export const checkout = async (data: User) => {
     const { sessionId, customer } = response.data;
 
     const stripe = await getStripeJs();
-    console.log(data);
-
-    // localStorage.setItem("first_name", data.first_name);
-    // localStorage.setItem("last_name", data.last_name);
-    // localStorage.setItem("cpf", data.cpf);
-    // localStorage.setItem("email", data.email);
-    // localStorage.setItem("telephone_number", data.telephone_number);
-    // localStorage.setItem("quantity", String(data.quantity));
 
     localStorage.setItem("RebornFestivalStorage", JSON.stringify(data));
 
@@ -35,7 +27,7 @@ export const checkout = async (data: User) => {
       path: "/",
     });
     setCookie(undefined, "rebornfestival.cpf", data.cpf, {
-      maxAge: 60 * 5, // 5 minutes
+      maxAge: 60 * 25, // 25 minutes TODO change time to 5 minutes
       path: "/",
     });
 
