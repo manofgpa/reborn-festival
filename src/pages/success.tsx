@@ -17,8 +17,8 @@ import Confetti from "../components/Confetti";
 export default function Success() {
   return (
     <>
-      <Confetti />
       <Box h="100vh">
+        <Confetti />
         <Box
           maxWidth={600}
           align="center"
