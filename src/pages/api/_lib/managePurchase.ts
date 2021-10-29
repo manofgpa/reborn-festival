@@ -7,6 +7,7 @@ interface User {
   ref: () => string;
   data: {
     sessionId: string;
+    stripe_customer_id: string;
   };
 }
 
@@ -28,6 +29,7 @@ export async function managePurchase(paymentIntent = "", customerId: string) {
     const checkout = await stripe.checkout.sessions.listLineItems(
       user.data.sessionId
     );
+    console.log(checkout);
 
     const { id, description, quantity, price } = checkout;
 

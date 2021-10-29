@@ -3,15 +3,6 @@ import { fauna } from "services/fauna";
 import { stripe } from "../../services/stripe";
 import { query as q } from "faunadb";
 
-type User = {
-  ref: {
-    id: string;
-  };
-  data: {
-    stripe_customer_id: string;
-  };
-};
-
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     try {
@@ -52,7 +43,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         telephone_number,
         email,
         cpf,
-        quantity,
       };
 
       await fauna.query(q.Create(q.Collection("users"), { data }));

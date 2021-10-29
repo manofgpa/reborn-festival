@@ -43,7 +43,12 @@ export default function Success({
 }: SuccessProps) {
   const [confettiQuantity, setConfettiQuantity] = useState(200);
   const [isConfettiRunning, setIsConfettiRunning] = useState(true);
-  const [localData, setLocalData] = useState({});
+  const [localData, setLocalData] = useState({
+    cpf: "",
+    last_name: "",
+    first_name: "",
+    email: "",
+  });
 
   const handleMoreConfetti = () => {
     setConfettiQuantity(confettiQuantity + 200);
@@ -55,10 +60,10 @@ export default function Success({
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const myData = window.localStorage.getItem("RebornFestivalStorage");
-
-      setLocalData(JSON.parse(myData));
-      console.log(localData);
+      const user = window.localStorage.getItem("RebornFestivalStorage");
+      if (user) {
+        setLocalData(JSON.parse(user));
+      }
     }
   }, []);
 
@@ -76,7 +81,7 @@ export default function Success({
         left="50%"
         transform="translate(-50%, -50%)"
         w="100%"
-        mt={[32, 0]}
+        mt={[36, 0]}
         pb={[4, 0]}
       >
         <Box>
@@ -147,7 +152,7 @@ export default function Success({
           </Table>
           <Flex>
             <Box>
-              <Text fontSize="lg" align="left">
+              <Text fontSize="lg" align="left" fontWeight="bold">
                 Dados Pessoais
               </Text>
               <Box align="left" mt={1}>
