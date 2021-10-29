@@ -8,7 +8,7 @@ const ConfettiComponent = ({
     return (
       <Confetti
         width={window.innerWidth}
-        height={window.innerHeight}
+        height={window.innerHeight + 400}
         numberOfPieces={confettiQuantity}
         opacity={0.8}
         run={isConfettiRunning}

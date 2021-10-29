@@ -63,7 +63,7 @@ export default function Success({
   }, []);
 
   return (
-    <Box h={["60vh", "100vh"]}>
+    <Box h={["112vh", "100vh"]}>
       <Confetti
         confettiQuantity={confettiQuantity}
         isConfettiRunning={isConfettiRunning}
@@ -159,7 +159,7 @@ export default function Success({
           </Flex>
         </Box>
 
-        <Box mt={2}>
+        <Box my={4}>
           <HStack spacing={2} justify="center">
             <Button
               colorScheme={isConfettiRunning ? "red" : "green"}
