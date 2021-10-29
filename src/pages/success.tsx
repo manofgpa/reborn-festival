@@ -18,7 +18,7 @@ export default function Success() {
   return (
     <>
       <Particles />
-      <Box h="100vh">
+      {/* <Box h="100vh">
         <Box
           maxWidth={600}
           align="center"
@@ -38,7 +38,7 @@ export default function Success() {
           </Box>
           <Text fontSize={"4xl"}></Text>
         </Box>
-      </Box>
+      </Box> */}
     </>
   );
 }
