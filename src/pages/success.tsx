@@ -18,7 +18,7 @@ export default function Success() {
   return (
     <>
       <ParticlesComponent />
-      <Box h="100vh" id="tsparticles">
+      <Box h="100vh">
         <Box
           maxWidth={600}
           align="center"
