@@ -22,7 +22,7 @@ export interface ParticlesProps {
 
 export interface ParticlesState {
   canvas?: HTMLCanvasElement;
-  library?: Container;
+  library?: Container | null;
 }
 
 export default class Particles extends Component<
