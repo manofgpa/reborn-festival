@@ -8,7 +8,7 @@ import {
   Image,
   Box,
 } from "@chakra-ui/react";
-import { ParticlesComponent } from "components/Particles";
+import Particles from "../components/Particles/Particles";
 
 // TODO adicionar inputs demais participantes
 // TODO completar pagina sucesso com dados da compra e dos convidados.
@@ -17,7 +17,7 @@ import { ParticlesComponent } from "components/Particles";
 export default function Success() {
   return (
     <>
-      <ParticlesComponent />
+      <Particles />
       <Box h="100vh">
         <Box
           maxWidth={600}
