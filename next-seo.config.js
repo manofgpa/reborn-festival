@@ -11,7 +11,7 @@ const defaultSEOConfig = {
     description: "Um reveillon épico",
     images: [
       {
-        url: "https://www.rebornfestival.com.br",
+        url: "https://www.rebornfestival.com.br/images/logo-fundo.jpg",
         alt: "Reborn Festival logo",
       },
     ],
