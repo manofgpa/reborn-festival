@@ -13,7 +13,7 @@ const defaultSEOConfig = {
     description: "Um reveillon épico",
     images: [
       {
-        url: `${window.location.host}/images/logo-fundo.jpg`,
+        url: "https://reborn-festival-git-dev-manofgpa.vercel.app/images/logo-fundo.jpg",
         alt: "Reborn Festival logo",
       },
     ],
