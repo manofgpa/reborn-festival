@@ -8,7 +8,7 @@ import {
   Image,
   Box,
 } from "@chakra-ui/react";
-import Particles from "../components/Particles/Particles";
+import Confetti from "../components/Confetti";
 
 // TODO adicionar inputs demais participantes
 // TODO completar pagina sucesso com dados da compra e dos convidados.
@@ -17,8 +17,8 @@ import Particles from "../components/Particles/Particles";
 export default function Success() {
   return (
     <>
-      <Particles />
-      {/* <Box h="100vh">
+      <Confetti />
+      <Box h="100vh">
         <Box
           maxWidth={600}
           align="center"
@@ -38,7 +38,7 @@ export default function Success() {
           </Box>
           <Text fontSize={"4xl"}></Text>
         </Box>
-      </Box> */}
+      </Box>
     </>
   );
 }
