@@ -26,9 +26,7 @@ import { fauna } from "../services/fauna";
 import { stripe } from "services/stripe";
 
 // TODO adicionar inputs demais participantes
-// TODO completar pagina sucesso com dados da compra e dos convidados.
-// TODO trocar status pagamento true faunadb
-// TODO particles not showing on vercel deploy
+// TODO completar pagina sucesso com dados dos convidados.
 
 interface SuccessProps {
   amount_total: number;
