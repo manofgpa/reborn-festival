@@ -10,7 +10,9 @@ import {
 } from "@chakra-ui/react";
 import { ParticlesComponent } from "components/Particles";
 
-import { tsParticles } from "tsparticles";
+// TODO adicionar inputs demais participantes
+// TODO completar pagina sucesso com dados da compra e dos convidados.
+// TODO trocar status pagamento true faunadb
 
 export default function Success() {
   return (

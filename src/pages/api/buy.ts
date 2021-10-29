@@ -53,12 +53,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         ],
         mode: "payment",
         allow_promotion_codes: true,
-        success_url: process.env.STRIPE_SUCCESS_URL
-          ? process.env.STRIPE_SUCCESS_URL
-          : "",
-        cancel_url: process.env.STRIPE_CANCEL_URL
-          ? process.env.STRIPE_CANCEL_URL
-          : "",
+        success_url: `https://${req.headers.host}/success`,
+        cancel_url: `https://${req.headers.host}/comprar`,
       });
 
       return res.status(200).json({
