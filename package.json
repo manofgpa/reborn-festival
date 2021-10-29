@@ -36,7 +36,6 @@
     "react-input-mask": "^2.0.4",
     "react-scroll": "^1.8.4",
     "react-slick": "^0.28.1",
-    "react-use": "^17.3.1",
     "react-vertical-timeline-component": "^3.5.2",
     "stripe": "^8.184.0",
     "yup": "^0.32.11"
