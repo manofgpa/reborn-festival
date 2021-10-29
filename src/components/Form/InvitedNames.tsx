@@ -55,8 +55,6 @@ export const InvitedNames = ({ quantity, userData }) => {
       left="50%"
       transform="translate(-50%, -50%)"
       w="100%"
-      mt={[32, 0]}
-      pb={[4, 0]}
     >
       <Image src={"/images/logo.png"} my={2} />
       <Box bgColor="yellow.600" py={[8, 12]} borderRadius={["0", "24"]}>
@@ -70,7 +68,7 @@ export const InvitedNames = ({ quantity, userData }) => {
             {inputsArray.map((input, index) => (
               <Box key={index}>
                 <FormLabel htmlFor={`invited${index + 1}`}>
-                  Nome do participante {index + 1}
+                  Nome completo ingresso {index + 1}
                 </FormLabel>
                 <Input
                   {...register(`invited${index + 1}`, {
