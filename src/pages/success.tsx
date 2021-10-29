@@ -32,6 +32,10 @@ export default function Success() {
     setIsConfettiRunning(!isConfettiRunning);
   };
 
+  const myData = localStorage.getItem("RebornFestivalStorage");
+
+  console.log(myData);
+
   return (
     <>
       <Box h="100vh">
@@ -89,7 +93,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
   }
 
-  const customerId = cookies["rebornfestival.customer_id"];
+  // const customerId = cookies["rebornfestival.customer_id"];
 
   return {
     props: {},

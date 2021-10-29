@@ -21,12 +21,14 @@ export const checkout = async (data: User) => {
     const stripe = await getStripeJs();
     console.log(data);
 
-    localStorage.setItem("first_name", data.first_name);
-    localStorage.setItem("last_name", data.last_name);
-    localStorage.setItem("cpf", data.cpf);
-    localStorage.setItem("email", data.email);
-    localStorage.setItem("telephone_number", data.telephone_number);
-    localStorage.setItem("quantity", String(data.quantity));
+    // localStorage.setItem("first_name", data.first_name);
+    // localStorage.setItem("last_name", data.last_name);
+    // localStorage.setItem("cpf", data.cpf);
+    // localStorage.setItem("email", data.email);
+    // localStorage.setItem("telephone_number", data.telephone_number);
+    // localStorage.setItem("quantity", String(data.quantity));
+
+    localStorage.setItem("RebornFestivalStorage", JSON.stringify(data));
 
     setCookie(undefined, "rebornfestival.customer_id", customer, {
       maxAge: 60 * 5, // 5 minutes
