@@ -1,10 +1,7 @@
 import {
-  Stack,
   Flex,
   Button,
   Text,
-  VStack,
-  useBreakpointValue,
   Image,
   Box,
   HStack,
@@ -15,7 +12,6 @@ import {
   Tr,
   Th,
   Td,
-  TableCaption,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Confetti from "../components/Confetti";
@@ -23,10 +19,6 @@ import { parseCookies } from "nookies";
 import { GetServerSideProps } from "next";
 import { query as q } from "faunadb";
 import { fauna } from "../services/fauna";
-import { stripe } from "services/stripe";
-
-// TODO adicionar inputs demais participantes
-// TODO completar pagina sucesso com dados dos convidados.
 
 interface SuccessProps {
   amount_total: number;
@@ -48,14 +40,6 @@ export default function Success({
     email: "",
   });
 
-  const handleMoreConfetti = () => {
-    setConfettiQuantity(confettiQuantity + 200);
-  };
-
-  const handleConfettiState = () => {
-    setIsConfettiRunning(!isConfettiRunning);
-  };
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       const user = window.localStorage.getItem("RebornFestivalStorage");
@@ -64,6 +48,14 @@ export default function Success({
       }
     }
   }, []);
+
+  const handleMoreConfetti = () => {
+    setConfettiQuantity(confettiQuantity + 200);
+  };
+
+  const handleConfettiState = () => {
+    setIsConfettiRunning(!isConfettiRunning);
+  };
 
   return (
     <Box h={["112vh", "100vh"]}>
@@ -192,15 +184,13 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
   }
 
-  // pegar session id do usuario
-
   const customerId = cookies["rebornfestival.customer_id"];
-  const userRef = await fauna.query<{ sessionId: string }>(
-    q.Select(
-      "ref",
-      q.Get(q.Match(q.Index("user_by_stripe_customer_id"), customerId))
-    )
-  );
+  // const userRef = await fauna.query<{ sessionId: string }>(
+  //   q.Select(
+  //     "ref",
+  //     q.Get(q.Match(q.Index("user_by_stripe_customer_id"), customerId))
+  //   )
+  // );
 
   const purchase = await fauna.query<SuccessProps>(
     q.Select(

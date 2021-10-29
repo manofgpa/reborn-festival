@@ -6,8 +6,15 @@ import { query as q } from "faunadb";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     try {
-      const { first_name, last_name, email, cpf, telephone_number, quantity } =
-        req.body.data;
+      const {
+        first_name,
+        last_name,
+        email,
+        cpf,
+        telephone_number,
+        quantity,
+        participants_names,
+      } = req.body.data;
 
       const stripeCustomer = await stripe.customers.create({
         email,
@@ -43,6 +50,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         telephone_number,
         email,
         cpf,
+        participants_names,
       };
 
       await fauna.query(q.Create(q.Collection("users"), { data }));

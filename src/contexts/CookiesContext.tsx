@@ -10,6 +10,7 @@ type User = {
   email: string;
   telephone_number: string;
   cpf: string;
+  participants_names: [];
 };
 
 export const checkout = async (data: User) => {
@@ -26,6 +27,7 @@ export const checkout = async (data: User) => {
       maxAge: 60 * 5, // 5 minutes
       path: "/",
     });
+
     setCookie(undefined, "rebornfestival.cpf", data.cpf, {
       maxAge: 60 * 25, // 25 minutes TODO change time to 5 minutes
       path: "/",
