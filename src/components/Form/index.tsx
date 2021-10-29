@@ -76,7 +76,7 @@ export const Form = () => {
   });
 
   const onSubmit = async (data: User) => {
-    checkout(data);
+    await checkout(data);
   };
 
   return (
