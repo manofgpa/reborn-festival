@@ -11,14 +11,6 @@ interface User {
   };
 }
 
-interface Product {
-  id: string;
-  description: string;
-  amount_total: number;
-  price: [];
-  quantity: number;
-}
-
 export async function managePurchase(paymentIntent = "", customerId: string) {
   try {
     const user = await fauna.query<User>(
@@ -29,9 +21,6 @@ export async function managePurchase(paymentIntent = "", customerId: string) {
     const checkout = await stripe.checkout.sessions.listLineItems(
       user.data.sessionId
     );
-    console.log(checkout);
-
-    const { id, description, quantity, price } = checkout;
 
     const paymentData = {
       stripe_customer_id: user.data.stripe_customer_id,
