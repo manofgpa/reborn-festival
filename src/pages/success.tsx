@@ -13,7 +13,7 @@ import { ParticlesComponent } from "components/Particles";
 // TODO adicionar inputs demais participantes
 // TODO completar pagina sucesso com dados da compra e dos convidados.
 // TODO trocar status pagamento true faunadb
-
+// TODO particles not showing on vercel deploy
 export default function Success() {
   return (
     <>
