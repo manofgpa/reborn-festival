@@ -28,6 +28,7 @@
     "next": "^11.1.2",
     "next-pwa": "^5.4.0",
     "next-seo": "^4.28.1",
+    "nookies": "^2.5.2",
     "react": "^17.0.2",
     "react-confetti": "^6.0.1",
     "react-dom": "^17.0.2",
@@ -38,6 +39,7 @@
     "react-slick": "^0.28.1",
     "react-vertical-timeline-component": "^3.5.2",
     "stripe": "^8.184.0",
+    "stylis": "^4.0.10",
     "yup": "^0.32.11"
   },
   "devDependencies": {

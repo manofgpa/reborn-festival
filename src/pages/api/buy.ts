@@ -15,7 +15,7 @@ type User = {
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     try {
-      const { first_name, last_name, email, cpf, telephone, quantity } =
+      const { first_name, last_name, email, cpf, telephone_number, quantity } =
         req.body.data;
 
       const stripeCustomer = await stripe.customers.create({
@@ -28,7 +28,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         stripe_customer_id: customerId,
         first_name,
         last_name,
-        telephone,
+        telephone_number,
         email,
         cpf,
         quantity,

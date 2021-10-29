@@ -13,19 +13,15 @@ import {
   NumberDecrementStepper,
   NumberIncrementStepper,
   NumberInputField,
-  NumberInputStepper,
   NumberInput,
   HStack,
-  useNumberInput,
   Image,
 } from "@chakra-ui/react";
 
 import InputMask from "react-input-mask";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { getStripeJs } from "services/stripe-js";
-import { api } from "services/api";
-import { fauna } from "../../services/fauna";
+import { checkout } from "contexts/CookiesContext";
 
 const schema = yup.object({
   first_name: yup.string().required("Este campo é obrigatório."),
@@ -80,21 +76,7 @@ export const Form = () => {
   });
 
   const onSubmit = async (data: User) => {
-    try {
-      const response = await api.post("/buy", { data });
-
-      const { sessionId, customer } = response.data;
-
-      const stripe = await getStripeJs();
-
-      if (stripe) {
-        await stripe.redirectToCheckout({
-          sessionId,
-        });
-      }
-    } catch (error) {
-      alert(error);
-    }
+    checkout(data);
   };
 
   return (
