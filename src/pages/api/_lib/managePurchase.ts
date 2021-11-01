@@ -43,19 +43,19 @@ export async function managePurchase(paymentIntent = "", customerId: string) {
       q.Create(q.Collection("purchases"), { data: paymentData })
     );
 
-    api.post("https://www.rebornfestival.com.br/api/telegram_push", {
-      message: `${user.data.first_name} ${
-        user.data.last_name
-      } finalizou a compra de ${
-        paymentData.quantity
-      } ingressos. Valor total da compra: ${new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }).format(paymentData.amount_total / 100)}.`,
-      json: {
-        convidados: user.data.participants_names,
-      },
-    });
+    // api.post("https://www.rebornfestival.com.br/api/telegram_push", {
+    //   message: `${user.data.first_name} ${
+    //     user.data.last_name
+    //   } finalizou a compra de ${
+    //     paymentData.quantity
+    //   } ingressos. Valor total da compra: ${new Intl.NumberFormat("pt-BR", {
+    //     style: "currency",
+    //     currency: "BRL",
+    //   }).format(paymentData.amount_total / 100)}.`,
+    //   json: {
+    //     convidados: user.data.participants_names,
+    //   },
+    // });
   } catch (error) {
     console.log(error);
   }

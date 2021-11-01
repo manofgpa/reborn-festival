@@ -185,12 +185,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 
   const customerId = cookies["rebornfestival.customer_id"];
-  // const userRef = await fauna.query<{ sessionId: string }>(
-  //   q.Select(
-  //     "ref",
-  //     q.Get(q.Match(q.Index("user_by_stripe_customer_id"), customerId))
-  //   )
-  // );
 
   const purchase = await fauna.query<SuccessProps>(
     q.Select(
