@@ -47,7 +47,7 @@ export const InvitedNames = ({ quantity, userData }) => {
   // TODO switch to webhook customer.created
   const onSubmit = async (data: User) => {
     try {
-      api.post("/telegram_push", {
+      api.post("https://www.rebornfestival.com.br/api/telegram_push", {
         message: `${userData.first_name} ${userData.last_name} começou a compra de ${userData.quantity} ingressos.`,
         json: {
           nome: `${userData.first_name} ${userData.last_name}`,
