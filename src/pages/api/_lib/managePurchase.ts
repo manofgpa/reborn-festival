@@ -18,13 +18,12 @@ interface User {
   };
 }
 
-export async function managePurchase(paymentIntent = "", customerId: string) {
+export async function managePurchase(customerId: string) {
   try {
     const user = await fauna.query<User>(
       q.Get(q.Match(q.Index("user_by_stripe_customer_id"), customerId))
     );
 
-    // const payment = await stripe.paymentIntents.retrieve(paymentIntent);
     const checkout = await stripe.checkout.sessions.listLineItems(
       user.data.sessionId
     );
