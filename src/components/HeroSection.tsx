@@ -10,8 +10,6 @@ import {
 import * as Scroll from "react-scroll";
 
 import { ArrowDownIcon } from "@chakra-ui/icons";
-import { telegramPush } from "pages/api/_lib/telegramPush";
-import { api } from "services/api";
 
 export const HeroSection = () => {
   let scroller = Scroll.scroller;

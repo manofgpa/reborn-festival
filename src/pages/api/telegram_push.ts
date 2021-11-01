@@ -5,25 +5,26 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const token = process.env.TELEGRAM_API_KEY;
   const chatId = process.env.TELEGRAM_CHAT_ID;
 
-  const bot = new TelegramBot(token, { polling: false });
+  if (token) {
+    const bot = new TelegramBot(token, { polling: false });
+    const { message, json } = req.body;
 
-  const { message, json } = req.body;
-  // const { message } = req.body;
-
-  try {
-    bot.sendMessage(
-      chatId,
-      // message
-      message + "\n\n<pre>" + JSON.stringify(json, null, 2) + "</pre>",
-      {
-        parse_mode: "html",
+    try {
+      if (chatId) {
+        bot.sendMessage(
+          chatId,
+          message + "\n\n<pre>" + JSON.stringify(json, null, 2) + "</pre>",
+          {
+            parse_mode: "HTML",
+          }
+        );
       }
-    );
-  } catch (err) {
-    console.log(
-      "Something went wrong when trying to send a Telegram notification",
-      err
-    );
+    } catch (err) {
+      console.log(
+        "Something went wrong when trying to send a Telegram notification",
+        err
+      );
+    }
   }
 };
 
