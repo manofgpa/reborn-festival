@@ -29,7 +29,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         customer: customerId,
         line_items: [
           {
-            price: process.env.STRIPE_TEST_PRICE,
+            price: process.env.STRIPE_LIVE_PRICE,
             quantity,
             adjustable_quantity: {
               enabled: true,
@@ -38,8 +38,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         ],
         mode: "payment",
         allow_promotion_codes: true,
-        success_url: `https://${req.headers.host}/success`,
-        cancel_url: `https://${req.headers.host}/comprar`,
+        success_url: `http://${req.headers.host}/success`,
+        cancel_url: `http://${req.headers.host}/comprar`,
       });
 
       const data = {
