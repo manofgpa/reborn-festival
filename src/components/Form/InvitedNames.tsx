@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import {
   FormErrorMessage,
   FormLabel,
@@ -10,19 +10,24 @@ import {
   Box,
   SimpleGrid,
   Text,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInputField,
-  NumberInput,
-  HStack,
   Image,
 } from "@chakra-ui/react";
 
-import InputMask from "react-input-mask";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { checkout } from "contexts/CookiesContext";
-import { useState } from "react";
+import { api } from "services/api";
+
+type User = {
+  first_name: string;
+  last_name: string;
+  quantity: number;
+  email_confirmation: string;
+  email: string;
+  telephone_number: string;
+  cpf: string;
+  participants_names: [];
+};
 
 export const InvitedNames = ({ quantity, userData }) => {
   const inputsArray = Array.from(Array(quantity));
@@ -39,8 +44,21 @@ export const InvitedNames = ({ quantity, userData }) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
+  // TODO switch to webhook customer.created
   const onSubmit = async (data: User) => {
+    try {
+      api.post("/telegram_push", {
+        message: `${userData.first_name} ${userData.last_name} começou a compra de ${userData.quantity} ingressos.`,
+        json: {
+          nome: `${userData.first_name} ${userData.last_name}`,
+          email: userData.email,
+          telefone: userData.telephone_number,
+          quantidade_ingressos: userData.quantity,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
     const participants_names = Object.values(data);
 
     await checkout({ ...userData, participants_names });

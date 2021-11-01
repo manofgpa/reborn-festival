@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { api } from "services/api";
 import { Readable } from "stream";
 import Stripe from "stripe";
 import { stripe } from "../../services/stripe";
@@ -24,6 +25,7 @@ const relevantEvents = new Set([
   "checkout.session.completed",
   "customer.subscription.updated",
   "customer.subscription.deleted",
+  "customer.created",
 ]);
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -47,11 +49,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
         if (relevantEvents.has(type)) {
           try {
+            const checkoutSession = event.data
+              .object as Stripe.Checkout.Session;
             switch (type) {
               case "checkout.session.completed":
-                const checkoutSession = event.data
-                  .object as Stripe.Checkout.Session;
-
                 if (
                   checkoutSession.payment_intent &&
                   checkoutSession.customer
@@ -61,7 +62,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                     checkoutSession.customer.toString()
                   );
                 }
-
+                break;
+              case "customer.created":
+                // try {
+                //   api.post("/telegram_push", {
+                //     message: `Usuário '${{checkoutSession.email}}' Cadastrado`,
+                //     json: checkoutSession,
+                //   });
+                // } catch (error) {
+                //   console.log(error);
+                // }
                 break;
               default:
                 throw new Error("Unhandled event");
