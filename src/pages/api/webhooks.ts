@@ -51,22 +51,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           try {
             switch (type) {
               case "checkout.session.completed":
+                console.log("completou checkout");
+
                 const checkoutSession = event.data
                   .object as Stripe.Checkout.Session;
                 if (checkoutSession.customer) {
                   await managePurchase(checkoutSession.customer.toString());
                 }
                 break;
-              // case "customer.created":
-              // try {
-              //   api.post("/telegram_push", {
-              //     message: `Usuário '${{checkoutSession.email}}' Cadastrado`,
-              //     json: checkoutSession,
-              //   });
-              // } catch (error) {
-              //   console.log(error);
-              // }
-              // break;
               default:
                 throw new Error("Unhandled event");
             }

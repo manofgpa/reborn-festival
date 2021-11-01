@@ -29,7 +29,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         customer: customerId,
         line_items: [
           {
-            price: process.env.STRIPE_LIVE_PRICE,
+            price: process.env.STRIPE_TEST_PRICE,
             quantity,
             adjustable_quantity: {
               enabled: true,
