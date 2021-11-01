@@ -46,18 +46,22 @@ export const InvitedNames = ({ quantity, userData }) => {
   });
   // TODO switch to webhook customer.created
   const onSubmit = async (data: User) => {
-    // api.post("https://www.rebornfestival.com.br/api/telegram_push", {
-    //   message: `${userData.first_name} ${userData.last_name} começou a compra de ${userData.quantity} ingressos.`,
-    //   json: {
-    //     nome: `${userData.first_name} ${userData.last_name}`,
-    //     email: userData.email,
-    //     telefone: userData.telephone_number,
-    //     quantidade_ingressos: userData.quantity,
-    //   },
-    // });
-    const participants_names = Object.values(data);
+    try {
+      api.post("https://www.rebornfestival.com.br/api/telegram_push", {
+        message: `${userData.first_name} ${userData.last_name} começou a compra de ${userData.quantity} ingressos.`,
+        json: {
+          nome: `${userData.first_name} ${userData.last_name}`,
+          email: userData.email,
+          telefone: userData.telephone_number,
+          quantidade_ingressos: userData.quantity,
+        },
+      });
+      const participants_names = Object.values(data);
 
-    await checkout({ ...userData, participants_names });
+      await checkout({ ...userData, participants_names });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
