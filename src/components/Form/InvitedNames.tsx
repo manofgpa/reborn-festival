@@ -55,12 +55,9 @@ export const InvitedNames = ({ quantity, userData }) => {
     //     quantidade_ingressos: userData.quantity,
     //   },
     // });
-    try {
-      const participants_names = Object.values(data);
-      await checkout({ ...userData, participants_names });
-    } catch (error) {
-      console.log(error);
-    }
+    const participants_names = Object.values(data);
+
+    await checkout({ ...userData, participants_names });
   };
 
   return (
