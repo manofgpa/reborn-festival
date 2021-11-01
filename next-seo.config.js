@@ -1,4 +1,6 @@
 /** @type {import('next-seo').DefaultSeoProps} */
+
+
 const defaultSEOConfig = {
   title: "Reborn Festival",
   titleTemplate: "Reborn Festival",
@@ -11,7 +13,7 @@ const defaultSEOConfig = {
     description: "Um reveillon épico",
     images: [
       {
-        url: "https://www.rebornfestival.com.br",
+        url: "https://reborn-festival-git-dev-manofgpa.vercel.app/images/logo-fundo.jpg",
         alt: "Reborn Festival logo",
       },
     ],

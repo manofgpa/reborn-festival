@@ -62,14 +62,8 @@ class MyDocument extends Document {
           <meta name="apple-mobile-web-app-title" content={APP_NAME} />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="theme-color" content="#FFFFFF" />
+          <meta name="theme-color" content="#8a561b" />
 
-          {/* <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/icons/apple-touch-icon.png"
-          />
-          <link rel="shortcut icon" href="/app-icon.png" /> */}
           <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>

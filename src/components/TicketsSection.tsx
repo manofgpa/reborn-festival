@@ -6,6 +6,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { CountdownSection } from "./CountdownSection";
+import Link from "next/link";
 
 export const TicketsSection = () => {
   return (
@@ -31,24 +32,20 @@ export const TicketsSection = () => {
           p={[6, 8]}
         >
           <CountdownSection />
-          <Button
-            colorScheme="green"
-            rounded={"full"}
-            color={"white"}
-            _hover={{ bg: "yellow.600" }}
-            w={["250px", "500px"]}
-            fontSize={["14px", "20px"]}
-            fontWeight="bold"
-            p={[8, 12]}
-            cursor="not-allowed"
-          >
-            INÍCIO PRE VENDA{" "}
-            <Text as="mark" ml={2}>
-              {" "}
-              01/11/2021
-            </Text>
-            {/* GARANTA SEU INGRESSO */}
-          </Button>
+          <Link href="/comprar">
+            <Button
+              colorScheme="green"
+              rounded={"full"}
+              color={"white"}
+              _hover={{ bg: "yellow.600" }}
+              w={["250px", "500px"]}
+              fontSize={["14px", "20px"]}
+              fontWeight="bold"
+              p={[8, 12]}
+            >
+              GARANTA SEU INGRESSO
+            </Button>
+          </Link>
         </Flex>
       </VStack>
     </Flex>
