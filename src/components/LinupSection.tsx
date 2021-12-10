@@ -50,12 +50,12 @@ export const LineupSection = () => {
       image: "/images/djs/lacciz.jpeg",
     },
     {
-      name: "TBA",
-      genres: "",
+      name: "Lin C",
+      genres: "Deep Tech",
       setTime: "?? : ?? - ?? : ??",
-      description: "Quem será o(a) próximo(a) convocado(a)?",
-      image:
-        "https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg",
+      description:
+        "O projeto Lin C, como é chamado o produtor e DJ carioca Marcelo Abreu, de 28 anos, representa a nova geração de artistas do Rio de Janeiro que buscam uma linha sonora diferenciada e também a evolução e democratização da cena local.",
+      image: "/images/djs/linc.png",
     },
     {
       name: "TBA",
