@@ -96,13 +96,18 @@ export const Form = () => {
           left="50%"
           transform="translate(-50%, -50%)"
           w="100%"
-          mt={[32, 0]}
+          mt={[36, 0]}
           pb={[4, 0]}
         >
           <Image src={"/images/logo.png"} my={2} />
           <Box bgColor="yellow.600" py={[8, 12]} borderRadius={["0", "24"]}>
             <Text fontSize={["3xl", "4xl"]} color="gray.50">
               Dados do Comprador
+            </Text>
+          </Box>
+          <Box mt={4}>
+            <Text fontSize={20} fontWeight="bold">
+              2º Lote Reborn Festival - R$ 290,00
             </Text>
           </Box>
           <form onSubmit={handleSubmit(onSubmit)}>

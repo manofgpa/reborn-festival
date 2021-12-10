@@ -27,27 +27,27 @@ export const LineupSection = () => {
     },
     {
       name: "Jama",
-      genres: "Mexican Lifestyle",
+      genres: "Funk",
       setTime: "?? : ?? - ?? : ??",
       description:
-        "Com vibe dançante, Jama carrega originalidade: o mix perfeito entre as nuances do grave potente, característica marcante do artista, com experimentações inovadoras através dos vocais debochados do funk carioca e o salseiro mexicano que une tudo como uma deliciosa guacamole.",
+        "Com vibe dançante, Jama carrega originalidade: o mix perfeito entre as nuances do grave potente, característica marcante do artista, com experimentações inovadoras através dos vocais debochados do funk, ele vem para transformar sua noite no verdadeiro baile carioca!",
       image: "/images/djs/ale.jpg",
     },
     {
-      name: "TBA",
-      genres: "",
+      name: "Rit & Mado",
+      genres: "Funk 150bpm",
       setTime: "?? : ?? - ?? : ??",
-      description: "Quem será o(a) próximo(a) convocado(a)?",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxOZpooA0_k640_FB3z8rZG9QUkG1XsYJ-T1com8ChptJdx5UwL6-OqjzGvhtqO9i7QU&usqp=CAU",
+      description:
+        "Rit & Mado são um duo de funk presente na cena nacional desde 2019, com diversas participações em eventos de referência! Seu som único e dançante vai botar fogo na pista de dança e iluminar os nossos convidados com o ritmado carioca!",
+      image: "/images/djs/ritmado.png",
     },
     {
-      name: "TBA",
-      genres: "",
+      name: "Lacciz",
+      genres: "Progressive / Melodic Techno",
       setTime: "?? : ?? - ?? : ??",
-      description: "Quem será o(a) próximo(a) convocado(a)?",
-      image:
-        "https://www.seekpng.com/png/small/49-497487_unknown-clipart-man-silhouette-female-silhouette-question-mark.png",
+      description:
+        "O Lacciz vem com sua pegada diferenciada de Techno e suas notas graves características para incendiar a pista de dança e iluminar os nossos convidados com a sua música!",
+      image: "/images/djs/lacciz.jpeg",
     },
     {
       name: "TBA",
