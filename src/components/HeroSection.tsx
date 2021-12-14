@@ -22,6 +22,7 @@ export const HeroSection = () => {
         url(/images/audience.jpg)`}
       backgroundSize={"cover"}
       backgroundPosition={"center center"}
+      position="relative"
     >
       <VStack
         w={"full"}
