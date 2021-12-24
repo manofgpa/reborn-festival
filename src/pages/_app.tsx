@@ -27,7 +27,7 @@ const MyApp = ({
 }: MyAppProps) => {
   return (
     <>
-      <Script
+      {/* <Script
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
       />
@@ -37,7 +37,7 @@ const MyApp = ({
         gtag('js', new Date())
 
         gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID})`}
-      </Script>
+      </Script> */}
       <CacheProvider value={emotionCache}>
         <ChakraProvider theme={customTheme}>
           <Head>

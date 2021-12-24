@@ -58,27 +58,28 @@ export const LineupSection = () => {
       image: "/images/djs/linc.png",
     },
     {
-      name: "TBA",
-      genres: "",
+      name: "Meraki",
+      genres: "Deep",
       setTime: "?? : ?? - ?? : ??",
-      description: "Quem será o(a) próximo(a) convocado(a)?",
-      image: "/images/anom/anom1.jpg",
+      description:
+        "Caio Marques, o carioca por trás do projeto, é conhecido por sua personalidade descontraída, divertida, que se reflete em sua comunicação carismática, bem humorada e leve, fazendo com que sempre faça muitas amizades por onde passa. Construindo seu próprio estilo musical, MERAKI é dono de diversas tracks que caíram na boca do público em sua carreira.",
+      image: "/images/djs/meraki.jpg",
     },
     {
-      name: "TBA",
-      genres: "",
+      name: "DRÖPE",
+      genres: "House",
       setTime: "?? : ?? - ?? : ??",
-      description: "Quem será o(a) próximo(a) convocado(a)?",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5oZn_ujpLbqEt8CVFMIcAA1rUzD4Al3NI8ZhnNqGxMWfT3kqPcugUSSDFeynM1pni5sw&usqp=CAU",
+      description:
+        "Presente na cena carioca desde 2019, DRÖPE soma ao elenco da Reborn trazendo um House Music dançante e abrasileirado com uma energia única que vai fazer os nossos iluminados não pararem um segundo na pista de dança!",
+      image: "/images/djs/drope.jpg",
     },
     {
-      name: "TBA",
-      genres: "",
+      name: "Batata Republic",
+      genres: "Sunset Vibes",
       setTime: "?? : ?? - ?? : ??",
-      description: "Quem será o(a) próximo(a) convocado(a)?",
-      image:
-        "https://www.seekpng.com/png/small/49-497487_unknown-clipart-man-silhouette-female-silhouette-question-mark.png",
+      description:
+        "Surgindo com seu estilo de house bem groovado e acompanhado de boas energias, Batata Republic é um projeto que tem como base a distribuição de boa música e goodvibes. Garante a vocês um embarque em uma viagem inesquecível através de sua energia eletrizante!",
+      image: "/images/djs/batatarepublic.jpg",
     },
   ];
 

@@ -22,16 +22,19 @@ export const Carousel = () => {
   const side = useBreakpointValue({ base: "30%", md: "10px" });
 
   const cards = [
-    "/images/casa4.jpg",
-    "/images/casa5.jpg",
-    "/images/casa6.jpg",
-    "/images/casa7.jpg",
-    "/images/casa8.jpg",
+    "/images/casa/REBORN1.jpg",
+    "/images/casa/REBORN2.jpg",
+    "/images/casa/REBORN3.jpg",
+    "/images/casa/REBORN4.jpg",
+    "/images/casa/REBORN5.jpg",
+    "/images/casa/REBORN6.jpg",
+    "/images/casa/REBORN7.jpg",
+    "/images/casa/REBORN8.jpg",
+    "/images/casa/REBORN9.jpg",
   ];
 
   return (
     <Box position={"relative"} height={"600px"} width={"full"}>
-      {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
         type="text/css"
