@@ -10,7 +10,6 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-import { ReactElement } from "react";
 import { Element } from "react-scroll";
 
 import * as Scroll from "react-scroll";
