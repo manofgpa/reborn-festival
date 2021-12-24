@@ -25,7 +25,7 @@ export const HeroSection = () => {
           width: "100%",
           height: "100vh",
           objectFit: "cover",
-          zIndex: "-1",
+          zIndex: -1,
         }}
       >
         <source src="videos/RebornDrone1.mp4" type="video/mp4" />
