@@ -107,7 +107,7 @@ export const Form = () => {
           </Box>
           <Box mt={4}>
             <Text fontSize={20} fontWeight="bold">
-              2º Lote Reborn Festival - R$ 290,00
+              3º Lote Reborn Festival - R$ 310,00
             </Text>
           </Box>
           <form onSubmit={handleSubmit(onSubmit)}>
