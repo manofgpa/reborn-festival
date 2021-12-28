@@ -20,8 +20,6 @@ interface User {
 
 export async function managePurchase(customerId: string) {
   try {
-    console.log("entrou no manage");
-
     const user = await fauna.query<User>(
       q.Get(q.Match(q.Index("user_by_stripe_customer_id"), customerId))
     );
@@ -43,21 +41,20 @@ export async function managePurchase(customerId: string) {
     await fauna.query(
       q.Create(q.Collection("purchases"), { data: paymentData })
     );
-    console.log("criou usuario");
 
-    // api.post("https://www.rebornfestival.com.br/api/telegram_push", {
-    //   message: `${user.data.first_name} ${
-    //     user.data.last_name
-    //   } finalizou a compra de ${
-    //     paymentData.quantity
-    //   } ingressos. Valor total da compra: ${new Intl.NumberFormat("pt-BR", {
-    //     style: "currency",
-    //     currency: "BRL",
-    //   }).format(paymentData.amount_total / 100)}.`,
-    //   json: {
-    //     convidados: user.data.participants_names,
-    //   },
-    // });
+    api.post("https://www.rebornfestival.com.br/api/telegram_push", {
+      message: `${user.data.first_name} ${
+        user.data.last_name
+      } finalizou a compra de ${
+        paymentData.quantity
+      } ingressos. Valor total da compra: ${new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(paymentData.amount_total / 100)}.`,
+      json: {
+        convidados: user.data.participants_names,
+      },
+    });
   } catch (error) {
     console.log(error);
   }
