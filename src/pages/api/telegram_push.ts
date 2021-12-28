@@ -11,10 +11,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
 
     if (token) {
-      const bot = new TelegramBot(token, { polling: false });
-      const { message, json } = req.body;
-
       try {
+        const bot = new TelegramBot(token, { polling: false });
+        const { message, json } = req.body;
+
         if (chatId) {
           bot.sendMessage(
             chatId,
