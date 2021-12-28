@@ -1,4 +1,6 @@
 import TelegramBot from "node-telegram-bot-api";
+import("bluebird");
+
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {

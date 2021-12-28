@@ -50,6 +50,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.36",
     "@types/react": "^17.0.30",
     "@types/react-input-mask": "^3.0.1",
     "@types/react-scroll": "^1.8.3",
