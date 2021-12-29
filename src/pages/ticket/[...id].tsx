@@ -16,6 +16,7 @@ interface TicketValidatorProps {
 }
 
 interface UserTicket {
+  error?: {};
   ref: string;
   data: {
     participant_name: string;
@@ -79,6 +80,18 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
         q.Get(q.Match(q.Index("user_by_uuid"), uuid))
       );
 
+      if (response.error) {
+        return {
+          props: {
+            error: true,
+            message: "User not found",
+            user,
+          },
+        };
+      }
+
+      console.log(response);
+
       user = response.data.participant_name;
 
       if (response.data.verified) {
@@ -110,14 +123,22 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     await api.post("https://www.rebornfestival.com.br/api/telegram_push", {
       message: `${user} está entrando no evento!`,
     });
+
+    return {
+      props: {
+        error: false,
+        message: "User found",
+        user,
+      },
+    };
   } catch (error) {
     console.log(error);
   }
 
   return {
     props: {
-      error: false,
-      message: "User found",
+      error: true,
+      message: "User not found",
       user,
     },
   };
