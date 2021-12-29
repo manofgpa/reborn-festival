@@ -80,18 +80,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
         q.Get(q.Match(q.Index("user_by_uuid"), uuid))
       );
 
-      if (response.error) {
-        return {
-          props: {
-            error: true,
-            message: "User not found",
-            user,
-          },
-        };
-      }
-
-      console.log(response);
-
       user = response.data.participant_name;
 
       if (response.data.verified) {
@@ -101,7 +89,15 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
             message: `Nome: ${user}. Ingresso já foi validado.`,
           });
         } catch (error) {
-          console.log(error);
+          console.log("Error");
+
+          return {
+            props: {
+              error: true,
+              message: "Invalid ticket",
+              user,
+            },
+          };
         }
 
         return {
@@ -116,6 +112,13 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       await fauna.query(q.Update(response.ref, { data: { verified: true } }));
     } catch (error) {
       console.log(error);
+      return {
+        props: {
+          error: true,
+          message: "Invalid ticket",
+          user,
+        },
+      };
     }
   }
 
@@ -138,7 +141,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   return {
     props: {
       error: true,
-      message: "User not found",
+      message: "Invalid ticket",
       user,
     },
   };
