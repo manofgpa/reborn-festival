@@ -83,8 +83,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
       if (response.data.verified) {
         try {
-          api.post("http://localhost:3000/api/telegram_push", {
-            // api.post("http://rebornfestival.com.br/api/telegram_push", {
+          // api.post("http://localhost:3000/api/telegram_push", {
+          api.post("http://rebornfestival.com.br/api/telegram_push", {
             message: `Nome: ${user}. Ingresso já foi validado.`,
           });
         } catch (error) {
