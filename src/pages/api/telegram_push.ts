@@ -12,24 +12,21 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       try {
         const { message } = req.body;
 
-        const TELEGRAM_API = `http://api.telegram.org/bot${token}/sendMessage`;
+        const TELEGRAM_API = `https://api.telegram.org/bot${token}/sendMessage`;
         const text = encodeURIComponent(message);
         const url = `${TELEGRAM_API}?chat_id=${chatId}&text=${text}`;
 
-        try {
-          const response = axios.post(url, text);
-          return res.status(200).json({
-            error: false,
-          });
-        } catch (error) {
-          console.log(error);
-          res.status(500).end("Error");
-        }
+        const response = await axios.post(url, text);
+
+        return res.status(200).json({
+          error: false,
+        });
       } catch (err) {
         console.log(
           "Something went wrong when trying to send a Telegram notification",
           err
         );
+        res.status(500).end("Error");
       }
     }
   } else {
