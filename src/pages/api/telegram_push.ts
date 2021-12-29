@@ -1,6 +1,4 @@
-import TelegramBot from "node-telegram-bot-api";
-import("bluebird");
-
+import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -12,17 +10,17 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (token) {
       try {
-        const bot = new TelegramBot(token, { polling: false });
-        const { message, json } = req.body;
+        const { message } = req.body;
 
-        if (chatId) {
-          bot.sendMessage(
-            chatId,
-            message + "\n\n<pre>" + JSON.stringify(json, null, 2) + "</pre>",
-            {
-              parse_mode: "HTML",
-            }
-          );
+        const TELEGRAM_API = `https://api.telegram.org/bot${token}/sendMessage`;
+        const text = encodeURIComponent(message);
+        const url = `${TELEGRAM_API}?chat_id=${chatId}&text=${text}`;
+
+        try {
+          const response = axios.post(url, text);
+        } catch (error) {
+          console.log(error);
+          res.status(500).end("Error");
         }
       } catch (err) {
         console.log(
@@ -30,6 +28,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           err
         );
       }
+
+      return res.status(200).json({
+        error: false,
+      });
     }
   } else {
     res.setHeader("Allow", "POST");

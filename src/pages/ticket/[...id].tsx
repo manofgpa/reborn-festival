@@ -83,9 +83,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
       if (response.data.verified) {
         try {
-          api.post("https://www.rebornfestival.com.br/api/telegram_push", {
-            message: `Ingresso já foi validado.`,
-            json: { Participante: user },
+          api.post("https://rebornfestival.com.br/api/telegram_push", {
+            message: `Nome: ${user}. Ingresso já foi validado.`,
           });
         } catch (error) {
           console.log(error);
@@ -108,7 +107,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {
     api.post("https://www.rebornfestival.com.br/api/telegram_push", {
       message: `${user} está entrando no evento!`,
-      json: {},
     });
   } catch (error) {
     console.log(error);

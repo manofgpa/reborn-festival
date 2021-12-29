@@ -20,7 +20,6 @@
     "@hookform/resolvers": "^2.8.2",
     "@stripe/stripe-js": "^1.20.3",
     "@types/axios": "^0.14.0",
-    "@types/node-telegram-bot-api": "^0.53.1",
     "@types/react-slick": "^0.23.7",
     "@types/stripe": "^8.0.417",
     "axios": "^0.24.0",
@@ -33,7 +32,6 @@
     "next": "^11.1.2",
     "next-pwa": "^5.4.0",
     "next-seo": "^4.28.1",
-    "node-telegram-bot-api": "^0.54.0",
     "nookies": "^2.5.2",
     "react": "^17.0.2",
     "react-confetti": "^6.0.1",
@@ -50,7 +48,6 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.36",
     "@types/react": "^17.0.30",
     "@types/react-input-mask": "^3.0.1",
     "@types/react-scroll": "^1.8.3",
