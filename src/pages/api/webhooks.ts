@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { api } from "services/api";
 import { Readable } from "stream";
 import Stripe from "stripe";
 import { stripe } from "../../services/stripe";

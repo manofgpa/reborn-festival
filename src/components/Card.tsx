@@ -1,6 +1,5 @@
 import {
   Box,
-  Center,
   useColorModeValue,
   Heading,
   Text,

@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import { CountdownSection } from "components/CountdownSection";
 import FeaturesSection from "components/FeaturesSection";
 import { HeroSection } from "components/HeroSection";
 import { LineupSection } from "components/LinupSection";
