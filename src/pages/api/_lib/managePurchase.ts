@@ -42,15 +42,20 @@ export async function managePurchase(customerId: string) {
       q.Create(q.Collection("purchases"), { data: paymentData })
     );
 
+    const ticketMessage = paymentData.quantity === 1 ? "ingresso" : "ingressos";
+
     await api.post("https://www.rebornfestival.com.br/api/telegram_push", {
       message: `${user.data.first_name} ${
         user.data.last_name
       } finalizou a compra de ${
         paymentData.quantity
-      } ingressos. Valor total da compra: ${new Intl.NumberFormat("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      }).format(paymentData.amount_total / 100)}.`,
+      } ${ticketMessage}. Valor total da compra: ${new Intl.NumberFormat(
+        "pt-BR",
+        {
+          style: "currency",
+          currency: "BRL",
+        }
+      ).format(paymentData.amount_total / 100)}.`,
     });
   } catch (error) {
     console.log(error);
