@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "../components/Form";
 
-import { Box, Text } from "@chakra-ui/react";
-import { checkout } from "contexts/CookiesContext";
+import { Box } from "@chakra-ui/react";
 
 const Ingresso = () => {
   return (

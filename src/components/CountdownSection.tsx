@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 
 export const CountdownSection = () => {
-  const eventDate = "12/31/2021";
+  const eventDate = "2021-12-31T17:00:00";
 
   const isWideVersion = useBreakpointValue({
     base: false,
