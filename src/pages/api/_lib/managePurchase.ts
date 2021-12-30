@@ -42,7 +42,7 @@ export async function managePurchase(customerId: string) {
       q.Create(q.Collection("purchases"), { data: paymentData })
     );
 
-    api.post("https://www.rebornfestival.com.br/api/telegram_push", {
+    await api.post("https://www.rebornfestival.com.br/api/telegram_push", {
       message: `${user.data.first_name} ${
         user.data.last_name
       } finalizou a compra de ${
@@ -51,9 +51,6 @@ export async function managePurchase(customerId: string) {
         style: "currency",
         currency: "BRL",
       }).format(paymentData.amount_total / 100)}.`,
-      json: {
-        convidados: user.data.participants_names,
-      },
     });
   } catch (error) {
     console.log(error);
